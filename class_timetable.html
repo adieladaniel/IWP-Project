@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Time Table</title>
+  <link rel="stylesheet" href="class_timetable.css">
+  <link href="christpic2.jpg" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+
+    <input type="radio" name="view" id="view-full" checked hidden>
+    <input type="radio" name="view" id="view-lab" hidden>
+
+    <div class="container">
+      <h1>📅 Weekly Class Timetable</h1>
+
+      <div class="controls">
+        <label for="view-full" class="view-tab">Full Timetable</label>
+        <label for="view-lab" class="view-tab">Lab Hours Only</label>
+      </div>
+
+      <div class="table-wrapper full-timetable">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>09:00–10:00</th>
+              <th>10:00–11:00</th>
+              <th>11:00–12:00</th>
+              <th>12:00–01:00</th>
+              <th>01:00–02:00</th>
+              <th>02:00–03:00</th>
+              <th>03:00–04:00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>MACHINE LEARNING<br><small>CSEAM531P</small></td>
+              <td>INTERNET & WEB PROGRAMMING<br><small>CSE534P</small></td>
+              <td>CRYPTOGRAPHY & NETWORK SECURITY<br><small>CSE535</small></td>
+              <td>MINORS IN GENERAL MANAGEMENT</td>
+              <td rowspan="6" class="break-cell">BREAK</td>
+              <td>DRONE TECHNOLOGIES<br><small>BTES552</small></td>
+              <td>SERVICE LEARNING</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>MACHINE LEARNING<br><small>CSEAM531P</small></td>
+              <td>CLOUD COMPUTING<br><small>CSE532P</small></td>
+              <td colspan="2" class="merged-cell">MACHINE LEARNING<br><small>CSEAM531P</small></td>
+              <td colspan="2" class="merged-cell">MINORS IN GENERAL MANAGEMENT</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>CLOUD COMPUTING<br><small>CSE532P</small></td>
+              <td>SOFTWARE ENG & PM<br><small>HS522</small></td>
+              <td>CRYPTOGRAPHY & NETWORK SECURITY<br><small>CSE535</small></td>
+              <td>DESIGN & ANALYSIS OF ALGORITHMS<br><small>CSE533</small></td>
+              <td colspan="2" class="merged-cell">DRONE TECHNOLOGIES<br><small>BTES552</small></td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>INTERNET & WEB PROGRAMMING<br><small>CSE534P</small></td>
+              <td>DESIGN & ANALYSIS OF ALGORITHMS<br><small>CSE533</small></td>
+              <td colspan="2" class="merged-cell">ABILITY ENHANCEMENT - V<br><small>OEC572</small></td>
+              <td colspan="2" class="merged-cell">INTERNET & WEB PROGRAMMING<br><small>CSE534P</small></td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td colspan="2" class="merged-cell">CLOUD COMPUTING<br><small>CSE532P</small></td>
+              <td>MACHINE LEARNING<br><small>CSEAM531P</small></td>
+              <td>CRYPTOGRAPHY & NETWORK SECURITY<br><small>CSE535</small></td>
+              <td colspan="2" class="merged-cell">MINORS IN GENERAL MANAGEMENT</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>DESIGN & ANALYSIS OF ALGORITHMS<br><small>CSE533</small></td>
+              <td>SOFTWARE ENG & PM<br><small>HS522</small></td>
+              <td>MENTORING</td>
+              <td>CLOUD COMPUTING<br><small>CSE532P</small></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrapper lab-timetable">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Subject</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tuesday</td>
+              <td><strong>MACHINE LEARNING</strong><br><small>CSEAM531P</small></td>
+              <td>11:00–01:00</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td><strong>DRONE TECHNOLOGIES</strong><br><small>BTES552</small></td>
+              <td>02:00–04:00</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td><strong>INTERNET & WEB PROGRAMMING</strong><br><small>CSE534P</small></td>
+              <td>02:00–04:00</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td><strong>CLOUD COMPUTING</strong><br><small>CSE532P</small></td>
+              <td>09:00–11:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<div class="back-btn-wrapper">
+  <a href="student.html" class="back-btn">← Back</a>
+</div>
+  </div>
+</body>
+</html>

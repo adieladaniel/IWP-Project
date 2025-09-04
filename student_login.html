@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login</title>
+  <link rel="stylesheet" href="student_login.css" />
+</head>
+<body>
+  <header>
+    <img src="christlogo.png" alt="Christ University Logo">
+    <div>Department of Artificial Intelligence and Data Science</div>
+  </header> 
+  <div class="login-container">
+    <h1>Student Login</h1>
+
+    <!-- Updated form -->
+    <form action="/login" method="POST" class="login-form">
+      <label for="student-id">Student ID</label>
+      <input type="text" id="student-id" name="student_id" required />
+
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <a href="login_page.html" class="back-link">← Back</a>
+  </div>
+</body>
+</html>
