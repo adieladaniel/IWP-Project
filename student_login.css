@@ -124,3 +124,7 @@
     .back-link:hover {
       text-decoration: underline;
     }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
