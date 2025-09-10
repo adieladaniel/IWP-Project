@@ -1,0 +1,367 @@
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        /* background: linear-gradient(to right, #e0ecff, #f8f9ff); */
+        background-color: #E4EFFF;
+        /* background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b); */
+        color: #000000;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20vh;
+
+        background-image: 
+        linear-gradient(to right, rgba(224, 236, 255, 0.5), rgba(248, 249, 255, 0.5)),
+        url('../images/christpic.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        width: 100vw;
+        height: 10vh;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 150%;
+        background-color: transparent;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #cce0ff;
+    }
+    header img{
+        width: 10vw;
+        margin-right: 280px;
+    }
+    header div{
+        margin-right: 430px;
+    }
+    .login-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+    .login-container {
+        width: 40vw;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 2s ease-in;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+      
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    #welcomeMsg {
+        margin-bottom: 20px;
+        font-size: 24px;
+        border-right: 2px solid #000000;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        animation: typing 3s steps(22, end) forwards, blink 0.75s step-end infinite;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 17ch; }
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+
+    input, button {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 80%;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #ffaf7b;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+    #teacherDashboard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .dashboard {
+      width: 90%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgb(255, 255, 255);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      background: #cce0ff;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #abc8f2;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+    }
+
+    .login-button{
+        background-color: #ffaf7b;
+        color: #000000;
+        font-weight: bold;
+        text-decoration: none;
+        width: 80%;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #61dc82;
+    }
+
+    .back-button {
+
+      padding: 10px 20px;
+      
+      color: #000000;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      
+    }
+    .back-to-login{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 6vh;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }   
+    .back-to-login2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 6vh;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }   
+    .back-to-login:hover{
+        transform: scale(1.05);
+    }
+
+    .back-to-login-image{
+        width: 30px;
+    }
+    #total-classes{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+    }
+    
+    #total-classes table {
+        border-collapse: collapse;
+        width: 80%;
+        /* margin: 20px auto; */
+        font-size: 16px;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+        /* border-radius: 10px; */
+        /* overflow: hidden;   */
+    }
+    #total-classes th,
+    #total-classes td {
+        padding: 16px 24px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+    #total-classes tr {
+        height: 60px;   
+    }
+
+    #total-classes tr:hover {
+        background-color: #d7d7ff;
+    }
+
+    .back-to-dashboard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 6vh;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    #daily-schedule{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 40vh;
+    }
+    #daily-schedule table{
+        border-collapse: collapse;
+        width: 80%;
+        /* margin: 20px auto; */
+        font-size: 16px;
+        background-color: whitesmoke;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        /* border-radius: 10px; */
+        /* overflow: hidden;   */
+    }
+    #daily-schedule th,
+    #daily-schedule td {
+        padding: 16px 24px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+    #daily-schedule tr {
+        height: 60px;   
+    }
+
+    #daily-schedule tr:hover {
+        background-color: #d7d7ff;
+    }
+    .back-to-total-classes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 6vh;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #attendance{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* height: 100vh; */
+    }
+    #student-data{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    #student-data table{
+        border-collapse: collapse;
+        width: 10%;
+        /* margin: 20px auto; */
+        font-size: 16px;
+        background-color: whitesmoke;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        /* border-radius: 10px; */
+        /* overflow: hidden;   */
+    }
+    #student-data th,
+    #student-data td {
+        padding: 16px 24px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+    #student-data tr {
+        height: 60px;   
+    }
+
+    #student-data tr:hover {
+        background-color: #d7d7ff;
+    }
+
+    .search{
+        display: flex;
+        gap: 20px;
+
+    }
+    .search-regno{
+        width: 40vw;
+    }
+    .search-button{
+        width: 20vw;
+        cursor: pointer;
+        background-color: white;
+    }
+    .search-button:hover{
+        background-color: rgb(206, 206, 206);
+    }
+
+
+    

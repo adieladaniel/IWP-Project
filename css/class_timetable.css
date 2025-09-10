@@ -1,0 +1,119 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f8fa;
+     background-image: 
+  linear-gradient(to right, rgba(224, 236, 255, 0.5), rgba(248, 249, 255, 0.5)),
+  url('../images/christpic4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.controls {
+  margin-bottom: 30px;
+}
+
+.view-tab {
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 10px 20px;
+  margin: 0 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.view-tab:hover {
+  background: #ccc;
+}
+
+#view-full:checked ~ .container label[for="view-full"],
+#view-lab:checked ~ .container label[for="view-lab"] {
+  background: #34495e;
+  color: white;
+}
+
+.table-wrapper {
+  display: none;
+  overflow-x: auto;
+}
+
+#view-full:checked ~ .container .full-timetable {
+  display: block;
+}
+
+#view-lab:checked ~ .container .lab-timetable {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #34495e;
+  color: white;
+}
+
+.break-cell {
+  background-color: #bed4f5;
+  font-weight: bold;
+}
+
+.back-btn-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #1e2f3d;
+  transform: translateY(-2px);
+}
+
+
+.merged-cell {
+  background-color: #f1f2f6;
+}
