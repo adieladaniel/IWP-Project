@@ -1,101 +1,113 @@
-<<<<<<< HEAD
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const path = require('path');
+// const express = require("express");
+// const mysql = require("mysql2");
+// const bodyParser = require("body-parser");
+// const cors = require("cors");
+
+// const app = express();
+// app.use(cors());
+// app.use(bodyParser.json());
+
+// // MySQL connection
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",      // change to your MySQL username
+//   password: "123456",      // change to your MySQL password
+//   database: "lab_portal"
+// });
+
+// db.connect(err => {
+//   if (err) throw err;
+//   console.log("✅ MySQL connected...");
+// });
+
+// // Register user
+// app.post("/register", (req, res) => {
+//   const { name, email, role, password } = req.body;
+//   const sql = "INSERT INTO users (name, email, role, password) VALUES (?, ?, ?, ?)";
+//   db.query(sql, [name, email, role, password], (err, result) => {
+//     if (err) return res.status(500).send(err);
+//     res.send({ message: "User registered successfully!" });
+//   });
+// });
+
+// // Login user
+// app.post("/login", (req, res) => {
+//   const { email, password } = req.body;
+//   const sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+//   db.query(sql, [email, password], (err, results) => {
+//     if (err) return res.status(500).send(err);
+//     if (results.length > 0) {
+//       res.send({ message: "Login successful", user: results[0] });
+//     } else {
+//       res.status(401).send({ message: "Invalid credentials" });
+//     }
+//   });
+// });
+
+// app.listen(5000, () => {
+//   console.log("🚀 Server running on http://localhost:5000");
+// });
+
+const express = require("express");
+const mysql = require("mysql2");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
-const port = 3000;
 
-// Parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
-// Serve static files (HTML, CSS)
-app.use(express.static(__dirname));
-
-// Connect to MySQL
+// MySQL connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',       // your MySQL username
-    password: '',       // your MySQL password
-    database: 'lab_portal'
+  host: "localhost",
+  user: "root",       // change if needed
+  password: "123456", // change if needed
+  database: "lab_portal"
 });
 
 db.connect(err => {
-    if(err) throw err;
-    console.log('Connected to MySQL');
+  if (err) throw err;
+  console.log("✅ MySQL connected...");
 });
 
-app.post('/login', (req, res) => {
-    const student_id = req.body.student_id;
-    const password = req.body.password;
-
-    const sql = "SELECT * FROM students WHERE student_id = ? AND password = ?";
-    db.query(sql, [student_id, password], (err, result) => {
-        if(err) throw err;
-
-        if(result.length > 0){
-            // Login success
-            res.redirect('/student.html');
-        } else {
-            // Login failed
-            res.send("<script>alert('Invalid Student ID or Password'); window.history.back();</script>");
-        }
-    });
+// Register user (optional)
+app.post("/register", (req, res) => {
+  const { name, email, role, password } = req.body;
+  const sql =
+    "INSERT INTO users (name, email, role, password) VALUES (?, ?, ?, ?)";
+  db.query(sql, [name, email, role, password], (err, result) => {
+    if (err) return res.status(500).send(err);
+    res.send({ message: "User registered successfully!" });
+  });
 });
 
-// Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
-=======
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const path = require('path');
-
-const app = express();
-const port = 3000;
-
-// Parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files (HTML, CSS)
-app.use(express.static(__dirname));
-
-// Connect to MySQL
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',       // your MySQL username
-    password: '',       // your MySQL password
-    database: 'lab_portal'
+// Login user
+app.post("/login", (req, res) => {
+  const { email, password, role } = req.body;
+  const sql =
+    "SELECT * FROM users WHERE email = ? AND password = ? AND role = ?";
+  db.query(sql, [email, password, role], (err, results) => {
+    if (err) return res.status(500).send(err);
+    if (results.length > 0) {
+      res.send({ message: "Login successful", user: results[0] });
+    } else {
+      res.status(401).send({ message: "Invalid credentials or role" });
+    }
+  });
 });
 
-db.connect(err => {
-    if(err) throw err;
-    console.log('Connected to MySQL');
-});
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, "public")));
 
-app.post('/login', (req, res) => {
-    const student_id = req.body.student_id;
-    const password = req.body.password;
-
-    const sql = "SELECT * FROM students WHERE student_id = ? AND password = ?";
-    db.query(sql, [student_id, password], (err, result) => {
-        if(err) throw err;
-
-        if(result.length > 0){
-            // Login success
-            res.redirect('/student.html');
-        } else {
-            // Login failed
-            res.send("<script>alert('Invalid Student ID or Password'); window.history.back();</script>");
-        }
-    });
+// Default route (open login_page.html when visiting /)
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "html", "login_page.html"));
 });
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(5000, () => {
+  console.log("🚀 Server running on http://localhost:5000/html/login_page.html");
 });
->>>>>>> 7dce555df616598f67c034a6260b6b955b6a4112

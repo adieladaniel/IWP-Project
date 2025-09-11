@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Teacher Login Portal</title>
+</head>
+<body>
+  <header>
+    <img src="../images/christlogo.png" alt="">
+    <div>Department of AIML and Data Science</div>
+  </header>
+  <div class="login-box">
+    <div class="login-container" id="loginPage">
+      <h1 id="welcomeMsg">Hello, how are you ?</h1>
+      <input type="text" placeholder="E-Mail" id="username" required />
+      <input type="password" placeholder="Password" id="password" required/>
+      <br>
+      <a href="../html/teacher-dashboard.html" class="login-button" >Login as a Teacher</a>
+    </div>
+    <div class="back-to-login2">
+            <img src="../images/back.png" alt="" class="back-to-login-image">
+            <a href="../html/login_page.html" class="back-button">Back to Home </a>
+        </div>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Teacher Login Portal</title>
+</head>
+<body>
+  <header>
+    <img src="../images/christlogo.png" alt="">
+    <div>Department of AIML and Data Science</div>
+  </header>
+  <div class="login-box">
+    <div class="login-container" id="loginPage">
+      <h1 id="welcomeMsg">Teacher Login</h1>
+      <form id="teacherLoginForm">
+        <input type="email" placeholder="E-Mail" id="username" required />
+        <input type="password" placeholder="Password" id="password" required/>
+        <br>
+        <button type="submit" class="login-button">Login as a Teacher</button>
+      </form>
+    </div>
+    <div class="back-to-login2">
+      <img src="../images/back.png" alt="" class="back-to-login-image">
+      <a href="../html/login_page.html" class="back-button">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("teacherLoginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const res = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, role: "teacher" })
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        window.location.href = "../html/teacher-dashboard.html"; 
+      } else {
+        alert(result.message);
+      }
+    });
+  </script>
+</body>
+</html>
