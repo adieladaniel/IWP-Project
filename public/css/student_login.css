@@ -1,4 +1,4 @@
-  body {
+  /* body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-image: 
@@ -127,4 +127,199 @@
     a{
       text-decoration: none;
       color: inherit;
-    }
+    } */
+
+    :root{
+  --bg-start:#e4efff;
+  --bg-end:#f8f9ff;
+  --accent:#3a76c4;
+  --text:#2c3e50;
+  --card-bg:rgba(255,255,255,0.94);
+  --card-border:rgba(0,0,0,0.06);
+  --shadow-sm:0 6px 16px rgba(0,0,0,0.10);
+  --shadow-lg:0 16px 44px rgba(0,0,0,0.18);
+}
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family:'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(58,118,196,0.12), transparent 60%),
+    radial-gradient(1000px 800px at 120% 20%, rgba(52,168,83,0.10), transparent 60%),
+    linear-gradient(to right, var(--bg-start), var(--bg-end));
+  display:flex;
+  flex-direction:column;
+}
+
+/* Header with true centered title */
+.site-header{
+  position:relative;
+  background:#cce0ff;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  height:72px;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr; /* left, centered title, right spacer */
+  align-items:center;
+  padding:0 20px;
+  column-gap:16px;
+}
+.logo{
+  grid-column:1;
+  justify-self:start;
+  width:min(140px,20vw);
+  height:auto;
+  object-fit:contain;
+}
+.brand{
+  grid-column:2;
+  justify-self:center;
+  text-align:center;
+}
+.brand .dept{
+  font-size:clamp(1rem, 2.2vw, 1.4rem);
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* Main wrapper */
+.login-wrapper{
+  flex:1;
+  max-width:1100px;
+  margin:0 auto;
+  padding:42px 20px 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Card */
+.login-card{
+  width:min(560px, 92vw);
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  box-shadow:var(--shadow-sm);
+  padding:28px 24px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+.login-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-lg);
+}
+
+.title{
+  margin:0 0 6px;
+  font-size:clamp(1.4rem, 3.2vw, 2rem);
+}
+.subtitle{
+  margin:0 0 16px;
+  opacity:0.85;
+  font-size:clamp(0.95rem, 2.2vw, 1.05rem);
+}
+
+/* Form */
+.login-form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.field label{
+  display:block;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.field input{
+  width:100%;
+  padding:12px 12px;
+  border-radius:10px;
+  border:1px solid #cfd6e4;
+  font: inherit;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+.field input:focus{
+  border-color: color-mix(in srgb, var(--accent) 65%, white);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 18%, white);
+}
+
+/* Password toggle */
+.password-wrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.password-wrapper input{
+  padding-right:44px; /* space for toggle button */
+}
+.password-toggle{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%); /* center vertically */
+  border:none;
+  background:transparent;
+  color:#6b778c;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  cursor:pointer;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.password-toggle:hover{
+  background-color:#eef2ff;
+  color:var(--accent);
+  transform:scale(1.06); /* subtle affordance */
+}
+
+/* Buttons and links */
+.submit-btn{
+  margin-top:6px;
+  padding:12px 16px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg, var(--accent), #6aa3e6);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+.submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(58,118,196,0.28);
+  filter:saturate(1.05);
+}
+.back-link{
+  margin-top:10px;
+  display:inline-block;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  transition: color 160ms ease;
+}
+.back-link:hover{ color:#2b5da0; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .header-inner{ height:64px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .login-card,
+  .submit-btn,
+  .password-toggle{ transition:none; }
+  .login-card:hover,
+  .submit-btn:hover,
+  .password-toggle:hover{ transform:none; }
+}

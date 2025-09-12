@@ -87,13 +87,13 @@
 </body>
 </html> -->
 
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Login</title>
+  <title>Lab Exam Portal</title>
   <link rel="stylesheet" href="../css/student_login.css" />
 </head>
 <body>
@@ -145,5 +145,120 @@
     });
   </script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Login — Lab Exam Portal</title>
+  <link rel="stylesheet" href="../css//student_login.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+      <div class="brand">
+        <span class="dept">Department of AIML and Data Science</span>
+      </div>
+      <div aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main class="login-wrapper" role="main">
+    <section class="login-card" aria-labelledby="loginTitle">
+      <h1 id="loginTitle" class="title">Student Login</h1>
+      <p class="subtitle">Sign in with university credentials to continue</p>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="username" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              minlength="4"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              aria-label="Show password"
+              aria-pressed="false"
+              title="Show/Hide password"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 1 1 .001-10.001A5 5 0 0 1 12 17zm0-8a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 9z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button class="submit-btn" type="submit">Sign in</button>
+        <p id="loginError" role="alert" style="margin:8px 0 0; color:#c62828; display:none;"></p>
+        <a class="back-link" href="../html/login_page.html">Back to role selection</a>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Password visibility toggle
+    const toggleBtn = document.querySelector('.password-toggle');
+    const pwd = document.getElementById('password');
+    toggleBtn.addEventListener('click', () => {
+      const wasPassword = pwd.type === 'password';
+      pwd.type = wasPassword ? 'text' : 'password';
+      toggleBtn.setAttribute('aria-pressed', String(wasPassword));
+      toggleBtn.setAttribute('aria-label', wasPassword ? 'Hide password' : 'Show password');
+    });
+
+    // Submit handler using Fetch API
+    const form = document.getElementById('loginForm');
+    const errorEl = document.getElementById('loginError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // stop default navigation; validate with backend first
+      errorEl.style.display = 'none';
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      try {
+        const res = await fetch('/student/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        // In your student login success handler, add this line:
+if (res.ok) {
+  const data = await res.json();
+  // Store the email for later use
+  localStorage.setItem('studentEmail', email);
+  window.location.href = '/html/student.html';
+  return;
+}
+
+  
+
+        const data = await res.json().catch(() => ({ message: 'Login failed' }));
+        errorEl.textContent = data.message || 'Login failed';
+        errorEl.style.display = 'block';
+      } catch (err) {
+        errorEl.textContent = 'Network error. Please try again.';
+        errorEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
 </html>
+
+
 

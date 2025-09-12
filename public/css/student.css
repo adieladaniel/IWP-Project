@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
@@ -101,4 +101,249 @@ h2 {
 
 .pastel-yellow {
   background-color: #f6f5e8; 
+} */
+
+
+:root{
+--bg-start:#e4efff;
+--bg-end:#f8f9ff;
+--accent:#3a76c4;
+--accent-2:#34a853;
+--accent-3:#e74c3c;
+--accent-4:#f39c12;
+--text:#2c3e50;
+--card-bg:rgba(255,255,255,0.94);
+--card-border:rgba(0,0,0,0.06);
+--shadow-sm:0 6px 16px rgba(0,0,0,0.10);
+--shadow-lg:0 16px 44px rgba(0,0,0,0.18);
+/* Card theme colors */
+--personal-color:#6bb6ff;
+--timetable-color:#52c788;
+--exam-color:#ff7675;
+--results-color:#fdcb6e;
 }
+
+html,body{ height:100%; }
+
+body{
+margin:0;
+font-family:'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+color:var(--text);
+/* background: var(--bg-end); */
+background:
+    linear-gradient(to right, var(--bg-start), var(--bg-end));
+display:grid;
+grid-template-rows: auto 1fr;
+}
+
+/* Header with logo left, title center, logout right */
+.site-header{
+position:relative;
+background:#cce0ff;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.header-inner{
+max-width:1200px;
+margin:0 auto;
+height:72px;
+display:grid;
+grid-template-columns: 1fr auto 1fr;
+align-items:center;
+padding:0 24px;
+column-gap:20px;
+}
+.logo{
+grid-column:1;
+justify-self:start;
+width:min(140px,18vw);
+height:auto;
+object-fit:contain;
+}
+.brand{
+grid-column:2;
+justify-self:center;
+text-align:center;
+}
+.brand .dept{
+font-size:clamp(1rem, 2.2vw, 1.4rem);
+font-weight:700;
+letter-spacing:0.2px;
+}
+.user-actions{
+grid-column:3;
+justify-self:end;
+}
+.logout{
+padding:8px 16px;
+background:linear-gradient(135deg, var(--accent-3), #c0392b);
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.logout:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(231,76,60,0.3);
+}
+
+/* Main wrapper */
+.dashboard-wrapper{
+max-width:1200px;
+margin:0 auto;
+padding:40px 24px 56px;
+display:flex;
+flex-direction:column;
+gap:32px;
+}
+
+/* Hero section */
+.dashboard-hero{
+text-align:center;
+max-width:800px;
+margin:0 auto;
+}
+.dashboard-hero .title{
+margin:0 0 8px;
+font-size:clamp(1.6rem, 3.8vw, 2.4rem);
+}
+.dashboard-hero .subtitle{
+margin:0;
+opacity:0.85;
+font-size:clamp(0.98rem, 2.2vw, 1.1rem);
+}
+
+/* Options grid - Fixed 2x2 layout */
+.options-grid{
+display:grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+gap:24px;
+max-width:800px;
+margin:0 auto;
+}
+
+/* Option cards */
+.option-card{
+position:relative;
+display:flex;
+align-items:center;
+gap:20px;
+padding:24px 20px;
+text-decoration:none;
+color:inherit;
+border:1px solid var(--card-border);
+border-radius:20px;
+background:var(--card-bg);
+box-shadow:var(--shadow-sm);
+transition:
+transform 220ms ease,
+box-shadow 220ms ease,
+background-color 300ms ease;
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+will-change:transform;
+}
+.option-card:hover{
+transform:translateY(-6px) scale(1.02);
+box-shadow:var(--shadow-lg);
+}
+
+/* Card icons */
+.option-card .icon{
+flex:0 0 auto;
+display:grid;
+place-items:center;
+width:72px;
+height:72px;
+border-radius:18px;
+color:white;
+}
+
+/* Card content */
+.option-card .card-content{
+flex:1;
+}
+.option-card .card-content h3{
+margin:0 0 8px;
+font-size:clamp(1.1rem, 2.4vw, 1.35rem);
+font-weight:700;
+}
+.option-card .card-content p{
+margin:0;
+opacity:0.85;
+font-size:clamp(0.95rem, 2.2vw, 1.05rem);
+line-height:1.4;
+}
+
+/* Individual card themes */
+.option-card.personal-details .icon{
+background:linear-gradient(135deg, var(--personal-color), #74b9ff);
+}
+.option-card.personal-details:hover{
+box-shadow:0 12px 34px rgba(107,182,255,0.28), var(--shadow-lg);
+}
+
+.option-card.timetable .icon{
+background:linear-gradient(135deg, var(--timetable-color), #00b894);
+}
+.option-card.timetable:hover{
+box-shadow:0 12px 34px rgba(82,199,136,0.28), var(--shadow-lg);
+}
+
+.option-card.exam-schedule .icon{
+background:linear-gradient(135deg, var(--exam-color), #e17055);
+}
+.option-card.exam-schedule:hover{
+box-shadow:0 12px 34px rgba(255,118,117,0.28), var(--shadow-lg);
+}
+
+.option-card.results .icon{
+background:linear-gradient(135deg, var(--results-color), #fdcb6e);
+}
+.option-card.results:hover{
+box-shadow:0 12px 34px rgba(253,203,110,0.28), var(--shadow-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px){
+.header-inner{
+height:64px;
+padding:0 20px;
+}
+.options-grid{
+grid-template-columns: 1fr;
+grid-template-rows: repeat(4, 1fr);
+max-width:400px;
+}
+.option-card{
+gap:16px;
+padding:20px 18px;
+}
+.option-card .icon{
+width:64px;
+height:64px;
+}
+}
+
+@media (max-width: 600px){
+.dashboard-wrapper{
+padding:32px 20px 48px;
+}
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce){
+.option-card,
+.logout{
+transition:none;
+}
+.option-card:hover,
+.logout:hover{
+transform:none;
+}
+}
+
+
+
+

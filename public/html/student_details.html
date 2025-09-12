@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Details</title>
+  <title>Lab Exam Portal</title>
   <link rel="stylesheet" href="../css/student_details.css" />   
 </head>
 <body>
@@ -22,4 +22,159 @@
     <a href="../html/student.html" class="back-btn">← Back to Dashboard</a>
   </div>
 </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Details — Lab Exam Portal</title>
+  <link rel="stylesheet" href="../css/student_details.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+      <div class="brand">
+        <span class="dept">Department of AIML and Data Science</span>
+      </div>
+      <div class="user-actions">
+        <a href="../html/student.html" class="back-btn">Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="details-wrapper" role="main">
+    <section class="details-hero">
+      <h1 class="title">Personal Details</h1>
+      <p class="subtitle">View and manage your profile information</p>
+    </section>
+
+    <!-- Loading state -->
+    <div id="loading" class="loading-state">
+      <p>Loading student details...</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="errorState" class="error-state" style="display: none;">
+      <p id="errorMessage">Failed to load student details. Please try again.</p>
+      <button onclick="fetchStudentDetails()" class="retry-btn">Retry</button>
+    </div>
+
+    <!-- Student details card -->
+    <section id="profileCard" class="profile-card" style="display: none;">
+      <div class="profile-header">
+        <div class="profile-pic-container">
+          <img src="../images/default-avatar.png" alt="Student profile picture" class="profile-pic" />
+        </div>
+        <div class="profile-name">
+          <h2 id="studentName">Loading...</h2>
+          <p class="student-id" id="studentId">Student ID: Loading...</p>
+        </div>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Full Name</span>
+          <span class="value" id="fullName">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Registration Number</span>
+          <span class="value" id="regNo">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Email</span>
+          <span class="value" id="email">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Department</span>
+          <span class="value" id="department">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Class</span>
+          <span class="value" id="class">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Course</span>
+          <span class="value">B.Tech Computer Science - AIML</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Batch</span>
+          <span class="value">2023-2027</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Status</span>
+          <span class="value">Active</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Get student email from localStorage (saved during login)
+    const studentEmail = localStorage.getItem('studentEmail') || 'adiel@student.com'; // fallback for testing
+
+    // Function to fetch student details
+    async function fetchStudentDetails() {
+      // Reset states
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('errorState').style.display = 'none';
+      document.getElementById('profileCard').style.display = 'none';
+
+      if (!studentEmail) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('errorState').style.display = 'block';
+        document.getElementById('errorMessage').textContent = 'No student email found. Please login again.';
+        return;
+      }
+
+      console.log('Fetching details for email:', studentEmail);
+
+      try {
+        const response = await fetch(`/student/details/${encodeURIComponent(studentEmail)}`);
+        console.log('Response status:', response.status);
+        
+        const data = await response.json();
+        console.log('Response data:', data);
+        
+        if (!response.ok) {
+          throw new Error(data.error || `Server error: ${response.status}`);
+        }
+
+        if (!data.student) {
+          throw new Error('Student data not found in response');
+        }
+
+        const student = data.student;
+
+        // Hide loading state and show profile card
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('profileCard').style.display = 'block';
+
+        // Populate student details
+        document.getElementById('studentName').textContent = student.name || 'N/A';
+        document.getElementById('studentId').textContent = `Student ID: ${student.reg_no || 'N/A'}`;
+        document.getElementById('fullName').textContent = student.name || 'N/A';
+        document.getElementById('regNo').textContent = student.reg_no || 'N/A';
+        document.getElementById('email').textContent = student.email || 'N/A';
+        document.getElementById('department').textContent = student.dept || 'N/A';
+        document.getElementById('class').textContent = student.class || 'N/A';
+
+      } catch (error) {
+        console.error('Error fetching student details:', error);
+        
+        // Hide loading state and show error
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('errorState').style.display = 'block';
+        document.getElementById('errorMessage').textContent = error.message;
+      }
+    }
+
+    // Load student details when page loads
+    document.addEventListener('DOMContentLoaded', fetchStudentDetails);
+  </script>
+</body>
 </html>
+

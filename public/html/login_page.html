@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Select Role</title>
+  <title>Lab Exam Portal</title>
   <link rel="stylesheet" href="../css/login.css" />
+  <link rel="icon" href="../images/favicon.png" sizes="8x8" type="image/png">
 </head>
 <body>
   <header>
@@ -20,5 +21,61 @@
       <a href="../html/teacher-login.html" class="role-btn faculty">I'm a Faculty</a>
     </div>
   </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab Exam Portal — Role Selection</title>
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+      <div class="brand">
+        <span class="dept">Department of AIML and Data Science</span>
+      </div>
+      <!-- intentionally empty third column for perfect centering -->
+      <div aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main class="role-wrapper" role="main">
+    <section class="role-hero">
+      <h1 class="title">Lab Exam Portal</h1>
+      <p class="subtitle">Select a role to continue to the appropriate dashboard</p>
+    </section>
+
+    <section class="role-grid" aria-label="Choose a role">
+      <a class="role-card student" href="../html/student_login.html">
+        <span class="icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3 1 8l11 5 8-3.636V16h2V8L12 3zm-5.5 9.5V15c0 1.657 2.91 3 5.5 3s5.5-1.343 5.5-3v-2.5L12 15l-5.5-2.5z"/>
+          </svg>
+        </span>
+        <div class="card-text">
+          <h2>I’m a Student</h2>
+          <p>Access schedules, upload submissions, and view results</p>
+        </div>
+      </a>
+
+      <a class="role-card faculty" href="../html/teacher-login.html">
+        <span class="icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 4h18v10H3V4zm2 2v6h14V6H5zm-2 12h18v2H3v-2zm4-4h2a3 3 0 0 1 3 3H7a3 3 0 0 1 3-3z"/>
+          </svg>
+        </span>
+        <div class="card-text">
+          <h2>I’m a Faculty</h2>
+          <p>Manage sessions, monitor attendance, and evaluate exams</p>
+        </div>
+      </a>
+    </section>
+  </main>
 </body>
 </html>

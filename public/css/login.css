@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -43,7 +43,7 @@ background-image:
 
     .role-container {
       margin: auto;
-      background: rgba(255, 255, 255, 0.95); /* Optional: makes text readable */
+      background: rgba(255, 255, 255, 0.95); /* Optional: makes text readable
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -91,4 +91,133 @@ background-image:
 
     .faculty:hover {
       background-color: #288a41;
-    }
+    } */
+
+:root{
+  --bg-start:#e4efff;
+  --bg-end:#f8f9ff;
+  --accent:#3a76c4;
+  --accent-2:#34a853;
+  --text:#2c3e50;
+  --card-bg:rgba(255,255,255,0.92);
+  --card-border:rgba(0,0,0,0.06);
+  --shadow-sm:0 4px 14px rgba(0,0,0,0.08);
+  --shadow-lg:0 14px 40px rgba(0,0,0,0.18);
+}
+
+/* Base layout */
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family:'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(58,118,196,0.12), transparent 60%),
+    radial-gradient(1000px 800px at 120% 20%, rgba(52,168,83,0.12), transparent 60%),
+    linear-gradient(to right, var(--bg-start), var(--bg-end));
+  display:flex;
+  flex-direction:column;
+}
+
+/* Header (logo left, title truly centered) */
+.site-header{
+  position:relative;
+  background:#cce0ff;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  height:72px;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr; /* left spacer, centered title, right spacer */
+  align-items:center;                   /* vertical centering */
+  padding:0 20px;
+  column-gap:16px;
+}
+.logo{
+  grid-column:1;
+  justify-self:start;                   /* pin logo to left */
+  width:min(140px,20vw);
+  height:auto;
+  object-fit:contain;
+}
+.brand{
+  grid-column:2;                         /* center column */
+  justify-self:center;                   /* horizontally center title */
+  text-align:center;
+}
+.brand .dept{
+  font-size:clamp(1rem, 2.2vw, 1.4rem);
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* Main wrapper */
+.role-wrapper{
+  flex:1;
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px 56px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+}
+
+/* Hero */
+.role-hero{ text-align:center; max-width:800px; }
+.role-hero .title{ font-size:clamp(1.6rem, 3.8vw, 2.4rem); margin:0 0 8px; }
+.role-hero .subtitle{ margin:0; opacity:0.85; font-size:clamp(0.98rem, 2.2vw, 1.05rem); }
+
+/* Role grid and cards (unchanged from previous modern design) */
+.role-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap:22px;
+  align-items:stretch;
+}
+.role-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px 22px;
+  text-decoration:none;
+  color:inherit;
+  border:1px solid var(--card-border);
+  border-radius:18px;
+  background:var(--card-bg);
+  box-shadow:var(--shadow-sm);
+  transition: transform 220ms ease, box-shadow 220ms ease, outline-color 220ms ease, background-color 300ms ease;
+  outline:2px solid transparent;
+  will-change:transform;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.role-card:hover{ transform:translateY(-4px) scale(1.03); box-shadow:var(--shadow-lg); }
+.role-card:focus-visible{ outline-color: color-mix(in srgb, var(--accent) 60%, white); }
+.role-card .icon{
+  flex:0 0 auto;
+  display:grid; place-items:center;
+  width:64px; height:64px;
+  border-radius:16px; color:white;
+}
+.role-card.student .icon{ background:linear-gradient(135deg, var(--accent), #6aa3e6); }
+.role-card.faculty .icon{ background:linear-gradient(135deg, var(--accent-2), #6cd38b); }
+.role-card .card-text h2{ margin:0 0 6px; font-size:clamp(1.05rem, 2.4vw, 1.3rem); }
+.role-card .card-text p{ margin:0; opacity:0.85; font-size:clamp(0.95rem, 2.2vw, 1.05rem); }
+.role-card.student:hover{ box-shadow:0 12px 34px rgba(58,118,196,0.28), var(--shadow-lg); }
+.role-card.faculty:hover{ box-shadow:0 12px 34px rgba(52,168,83,0.28), var(--shadow-lg); }
+
+/* Responsive adjustments */
+@media (max-width: 900px){
+  .header-inner{ height:64px; }
+  .role-grid{ grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce){
+  .role-card{ transition:none; }
+  .role-card:hover{ transform:none; }
+}
