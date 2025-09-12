@@ -33,7 +33,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -81,6 +81,66 @@
         window.location.href = "../html/student.html"; // redirect after login
       } else {
         alert(result.message);
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login</title>
+  <link rel="stylesheet" href="../css/student_login.css" />
+</head>
+<body>
+  <header>
+    <img src="../images/christlogo.png" alt="Christ University Logo">
+    <div>Department of Artificial Intelligence and Data Science</div>
+  </header> 
+  <div class="login-container">
+    <h1>Student Login</h1>
+
+    <form id="studentLoginForm" class="login-form">
+      <label for="student-email">Email</label>
+      <input type="text" id="student-email" name="email" required />
+
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <a href="../html/login_page.html" class="back-link">← Back</a>
+  </div>
+
+  <script>
+    document.getElementById("studentLoginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("student-email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("http://localhost:5000/student/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const result = await res.json();
+        if (res.ok) {
+          alert("Login successful!");
+          window.location.href = "../html/student.html";
+        } else {
+          alert(result.message);
+        }
+      } catch (error) {
+        alert("⚠️ Server error. Please try again later.");
       }
     });
   </script>
