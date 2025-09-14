@@ -1,0 +1,211 @@
+/* student-data.css */
+
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #E4EFFF; /* Light blue background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333; /* Darker text for better contrast */
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #cce0ff; /* Header background color */
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 2rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Softer shadow */
+}
+
+header img {
+    width: 60px;
+    height: auto;
+}
+
+header div {
+    font-size: 1.2rem;
+    font-weight: 600; /* Bolder font weight */
+    color: #00224d; /* Darker header text */
+}
+
+/* Main container */
+#student-data {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 900px; /* Increased max-width for better table display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft container shadow */
+}
+
+/* Section title */
+#student-data h2 {
+    font-size: 1.8rem;
+    color: #003366; /* Dark blue title */
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Dropdowns & Search Section */
+.controls-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem; /* Spacing between elements */
+}
+
+.class-select, .subject-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls-container label {
+    font-weight: 600;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.controls-container select, .search-regno {
+    flex-grow: 1; /* Allows inputs to fill available space */
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #cce0ff;
+    font-size: 1rem;
+    background-color: #f9fbfd;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.search-button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Table */
+#studentsTable {
+    width: 100%;
+    border-collapse: separate; /* Use separate to add border-spacing */
+    border-spacing: 0 10px; /* Adds vertical space between rows */
+    margin-top: 1rem;
+    background-color: #f9f9f9; /* Lighter background for table */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners on table */
+}
+
+#studentsTable th {
+    background-color: #e6f0ff; /* Header background color */
+    color: #003366;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: none;
+}
+
+#studentsTable td {
+    padding: 12px 15px;
+    text-align: center;
+    border: none;
+    background-color: #fff;
+}
+
+#studentsTable tr {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+#studentsTable tr:hover {
+    background-color: #f0f8ff; /* Light blue hover effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Inputs & Buttons inside table */
+.midsem-input, .endsem-input {
+    width: 70px; /* Slightly wider inputs */
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.save-button {
+    padding: 8px 15px;
+    background-color: #28a745; /* Green save button */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+/* Message container */
+#message-container {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    min-height: 20px; /* Prevents layout shift */
+}
+
+/* Back button container */
+.back-to-total-classes {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    margin-top: 2rem;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}

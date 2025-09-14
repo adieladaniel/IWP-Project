@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/student-data.css">
+    <title>Lab Exam Portal</title>
+</head>
+
+<body>
+    <header>
+        <img src="../images/christlogo.png" alt="Christ University Logo">
+        <div>Department of AIML and Data Science</div>
+    </header>
+    
+    <div id="student-data">
+        <h2>Student Lab Marks Entry</h2>
+
+  <div class="class-select" style="margin-bottom: 15px;">
+    <label for="classDropdown"><b>Select Class:</b></label>
+    <select id="classDropdown" style="padding: 5px; margin-left: 10px;">
+        <option value="">-- Select Class --</option>
+        <option value="CSAIML-A">CSAIML-A</option>
+        <option value="CSAIML-B">CSAIML-B</option>
+        <option value="CSAIML-C">CSAIML-C</option>
+        <option value="DS">Data Science</option>
+    </select>
+</div>
+
+  <div class="subject-select" style="margin-bottom: 15px;">
+    <label for="subjectDropdown"><b>Select Subject:</b></label>
+    <select id="subjectDropdown" style="padding: 5px; margin-left: 10px;">
+        <option value="">-- Select Subject --</option>
+        <option value="AIML-LAB-1">Foundations of AIML Lab</option>
+        <option value="DS-LAB-1">Data Science Lab</option>
+        <option value="WEB-DEV-LAB">Web Development Lab</option>
+        <option value="PYTHON-LAB">Python Programming Lab</option>
+    </select>
+</div>
+        
+        
+        <div class="search">
+            <input type="text" placeholder="Enter Register Number or Name" class="search-regno" id="searchInput">
+            <input type="button" value="Search" class="search-button" onclick="searchStudent()">
+            <input type="button" value="Show All" class="search-button" onclick="showAllStudents()" style="margin-left: 10px;">
+        </div>
+
+        <div id="message-container"></div>
+        
+        <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;" id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Register Number</th>
+                    <th>Marks Entry</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abhishek Anil George</td>
+                    <td>2362005</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362005" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362005" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362005">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adiel A Daniel</td>
+                    <td>2362007</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362007" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362007" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362007">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adin Sam</td>
+                    <td>2362008</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362008" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362008" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362008">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adithya P</td>
+                    <td>2362010</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362010" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362010" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362010">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adithya Agrawal</td>
+                    <td>2362012</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362012" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362012" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362012">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adorn Jim Mathew</td>
+                    <td>2362013</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362013" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362013" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362013">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adriel Clinton</td>
+                    <td>2362019</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362019" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362019" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362019">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Airene V John</td>
+                    <td>2362020</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362020" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362020" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362020">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Akash Dileep</td>
+                    <td>2362022</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362022" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362022" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362022">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Akhil Alex</td>
+                    <td>2362023</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362023" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362023" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362023">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anantha Narayan</td>
+                    <td>2362030</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362030" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362030" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362030">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Andrea Mary P T</td>
+                    <td>2362038</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362038" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362038" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362038">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ashik Tomy</td>
+                    <td>2362040</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362040" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362040" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362040">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ashutosh Das</td>
+                    <td>2362044</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362044" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362044" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362044">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Asin Tressa</td>
+                    <td>2362045</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362045" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362045" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362045">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Avadhanam Hasini</td>
+                    <td>2362047</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362047" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362047" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362047">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Davis K Sony</td>
+                    <td>2362049</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362049" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362049" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362049">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delna Liz Denny</td>
+                    <td>2362050</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362050" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362050" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362050">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Felix Francis</td>
+                    <td>2362069</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362069" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362069" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362069">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giftson Samuel Raj I</td>
+                    <td>2362072</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362072" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362072" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362072">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gladwin B Pullan</td>
+                    <td>2362080</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362080" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362080" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362080">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ishika Gupta</td>
+                    <td>2362085</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362085" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362085" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362085">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Abhishek Rufus</td>
+                    <td>2362087</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362087" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362087" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362087">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vyashnavi</td>
+                    <td>2362092</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362092" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362092" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362092">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jewel Titus</td>
+                    <td>2362095</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362095" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362095" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362095">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jio Shiju</td>
+                    <td>2362100</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362100" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362100" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362100">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bhavyashree</td>
+                    <td>2362102</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362102" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362102" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362102">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kavin Srini</td>
+                    <td>2362103</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362103" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362103" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362103">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lemuel Fernandez</td>
+                    <td>2362105</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362105" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362105" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362105">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>M Haripriya</td>
+                    <td>2362108</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362108" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362108" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362108">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mayanak Sharma</td>
+                    <td>2362110</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362110" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362110" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362110">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Melwin K</td>
+                    <td>2362112</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362112" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362112" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362112">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Melwin Robinson</td>
+                    <td>2362115</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362115" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362115" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362115">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Muthu Anurag</td>
+                    <td>2362120</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362120" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362120" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362120">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nandana</td>
+                    <td>2362121</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362121" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362121" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362121">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nandini</td>
+                    <td>2362123</td>
+                    <td>
+                        <input type="number" class="midsem-input" data-regno="2362123" placeholder="Midsem" min="0" max="50">
+                        <input type="number" class="endsem-input" data-regno="2362123" placeholder="Endsem" min="0" max="50">
+                        <button class="save-button" data-regno="2362123">Save</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="back-to-total-classes">
+            <img src="../images/back.png" alt="" class="back-to-login-image">
+            <a href="../html/teacher-dashboard.html" class="back-button" onclick="alert('Submitted successfully')">Submit</a>
+        </div> 
+    </div>
+
+    <script>
+        // Wait till DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 DOM loaded, initializing event listeners...');
+            
+            // Select all Save buttons
+            const saveButtons = document.querySelectorAll('.save-button');
+            console.log(`📋 Found ${saveButtons.length} save buttons`);
+
+            saveButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    // Get selected subject code and name from the dropdown
+                    const subjectDropdown = document.getElementById('subjectDropdown');
+                    const subjectCode = subjectDropdown.value;
+                    const subjectName = subjectDropdown.options[subjectDropdown.selectedIndex].text;
+
+                    // Check if a subject has been selected
+                    if (!subjectCode) {
+                        showMessage('Please select a subject before saving marks.', 'error');
+                        return;
+                    }
+
+                    const regno = button.dataset.regno;
+                    const midsemInput = document.querySelector(`.midsem-input[data-regno='${regno}']`);
+                    const endsemInput = document.querySelector(`.endsem-input[data-regno='${regno}']`);
+
+                    const midsem = midsemInput.value;
+                    const endsem = endsemInput.value;
+
+                    console.log(`💾 Attempting to save marks for ${regno} in ${subjectName}: Midsem=${midsem}, Endsem=${endsem}`);
+
+                    // Validation
+                    if (midsem === '' || endsem === '') {
+                        showMessage('Please enter both Midsem and Endsem marks.', 'error');
+                        return;
+                    }
+
+                    if (midsem < 0 || midsem > 50 || endsem < 0 || endsem > 50) {
+                        showMessage('Marks must be between 0 and 50.', 'error');
+                        return;
+                    }
+
+                    // Disable button during save
+                    button.disabled = true;
+                    button.textContent = 'Saving...';
+
+                    try {
+                        const response = await fetch('http://localhost:5000/results/save', {
+                            method: 'POST',
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                regno: regno,
+                                subject_code: subjectCode, // Use the selected subject code
+                                subject_name: subjectName, // Use the selected subject name
+                                midsem: Number(midsem),
+                                endsem: Number(endsem)
+                            })
+                        });
+
+                        const data = await response.json();
+                        
+                        if (response.ok) {
+                            console.log('✅ Success:', data);
+                            showMessage(`✅ Marks for ${subjectName} saved successfully for ${regno}!`, 'success');
+                        } else {
+                            console.error('❌ Server error:', data);
+                            showMessage(`❌ Error: ${data.message || 'Failed to save marks'}`, 'error');
+                        }
+                    } catch (error) {
+                        console.error('❌ Network error:', error);
+                        showMessage('❌ Network error. Please check if the server is running.', 'error');
+                    } finally {
+                        // Re-enable button
+                        button.disabled = false;
+                        button.textContent = 'Save';
+                    }
+                });
+            });
+        });
+
+        // Function to show messages
+        function showMessage(message, type) {
+            const container = document.getElementById('message-container');
+            if (!container) return;
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.style.padding = '10px';
+            messageDiv.style.margin = '10px 0';
+            messageDiv.style.borderRadius = '5px';
+            messageDiv.style.fontWeight = 'bold';
+            
+            if (type === 'success') {
+                messageDiv.style.backgroundColor = '#d4edda';
+                messageDiv.style.color = '#155724';
+                messageDiv.style.border = '1px solid #c3e6cb';
+            } else {
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.style.border = '1px solid #f5c6cb';
+            }
+            
+            messageDiv.textContent = message;
+            
+            // Clear previous messages
+            container.innerHTML = '';
+            container.appendChild(messageDiv);
+            
+            // Auto-remove message after 5 seconds
+            setTimeout(() => {
+                if (container.contains(messageDiv)) {
+                    container.removeChild(messageDiv);
+                }
+            }, 7000);
+        }
+
+        // Search functionality
+        function searchStudent() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase().trim();
+            const table = document.getElementById('studentsTable');
+            const rows = table.getElementsByTagName('tr');
+
+            if (searchValue === '') {
+                showAllStudents();
+                return;
+            }
+
+            let foundCount = 0;
+            
+            for (let i = 1; i < rows.length; i++) { // Skip header row
+                const nameCell = rows[i].getElementsByTagName('td')[0];
+                const regnoCell = rows[i].getElementsByTagName('td')[1];
+                
+                if (nameCell && regnoCell) {
+                    const name = nameCell.textContent.toLowerCase();
+                    const regno = regnoCell.textContent.toLowerCase();
+                    
+                    if (name.includes(searchValue) || regno.includes(searchValue)) {
+                        rows[i].style.display = '';
+                        foundCount++;
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+            
+            if (foundCount === 0) {
+                showMessage(`No students found matching "${searchValue}"`, 'error');
+            } else {
+                showMessage(`Found ${foundCount} student(s) matching "${searchValue}"`, 'success');
+            }
+        }
+
+        function showAllStudents() {
+            const table = document.getElementById('studentsTable');
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < rows.length; i++) { // Skip header row
+                rows[i].style.display = '';
+            }
+            
+            document.getElementById('searchInput').value = '';
+            showMessage('Showing all students', 'success');
+        }
+
+        // Add Enter key support for search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchStudent();
+            }
+        });
+
+        document.getElementById('classDropdown').addEventListener('change', function () {
+            const selectedClass = this.value;
+            const table = document.getElementById('studentsTable');
+
+            if (selectedClass === "CSAIML-A") {
+                table.style.display = "table"; // show student table
+                showMessage(`Showing students for ${selectedClass}`, 'success');
+            } else if (selectedClass === "") {
+                table.style.display = "none";
+                showMessage("⚠️ Please select a class.", 'error');
+            } else {
+                table.style.display = "none"; // hide table
+                showMessage(`No students available for ${selectedClass}`, 'error');
+            }
+        });
+    </script>
+</body>
+</html>
