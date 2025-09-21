@@ -28,54 +28,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lab Exam Portal — Role Selection</title>
-  <link rel="stylesheet" href="../css/login.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Exam Portal - Advanced Learning Platform</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
-      <div class="brand">
-        <span class="dept">Department of AIML and Data Science</span>
-      </div>
-      <!-- intentionally empty third column for perfect centering -->
-      <div aria-hidden="true"></div>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
     </div>
-  </header>
 
-  <main class="role-wrapper" role="main">
-    <section class="role-hero">
-      <h1 class="title">Lab Exam Portal</h1>
-      <p class="subtitle">Select a role to continue to the appropriate dashboard</p>
-    </section>
-
-    <section class="role-grid" aria-label="Choose a role">
-      <a class="role-card student" href="../html/student_login.html">
-        <span class="icon" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 3 1 8l11 5 8-3.636V16h2V8L12 3zm-5.5 9.5V15c0 1.657 2.91 3 5.5 3s5.5-1.343 5.5-3v-2.5L12 15l-5.5-2.5z"/>
-          </svg>
-        </span>
-        <div class="card-text">
-          <h2>I’m a Student</h2>
-          <p>Access schedules, upload submissions, and view results</p>
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <div class="site-logo-container">
+                <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+            </div>
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+                <span class="tagline">Advanced Learning Hub</span>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="../html/login_page.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Support</button>
+                        <ul class="dropdown-menu" aria-label="Support submenu">
+                            <li><a href="./student-support.html" class="dropdown-item">Student Support</a></li>
+                            <li><a href="./faculty-location.html" class="dropdown-item">Faculty Location</a></li>
+                            <li><a href="./technical-help.html" class="dropdown-item">Technical Help</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </a>
+    </header>
 
-      <a class="role-card faculty" href="../html/teacher-login.html">
-        <span class="icon" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3 4h18v10H3V4zm2 2v6h14V6H5zm-2 12h18v2H3v-2zm4-4h2a3 3 0 0 1 3 3H7a3 3 0 0 1 3-3z"/>
-          </svg>
-        </span>
-        <div class="card-text">
-          <h2>I’m a Faculty</h2>
-          <p>Manage sessions, monitor attendance, and evaluate exams</p>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">🚀 Next Generation Learning Platform</span>
+                </div>
+                <h1 class="hero-title">
+                    Welcome to <span class="gradient-text">Lab Exam Portal</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <!-- Experience cutting-edge digital assessment technology designed for modern education. 
+                    Secure, efficient, and user-friendly examination platform. -->
+                    Securely take your assessments on a platform built for efficiency and ease of use.
+                </p>
+                
+                <!-- Stats Section -->
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="2500">0</div>
+                        <div class="stat-label">Active Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Faculty Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10000">0</div>
+                        <div class="stat-label">Exams Conducted</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3D Tech Illustration -->
+            <div class="hero-visual">
+                <div class="tech-illustration">
+                    <div class="tech-circle tech-circle-1"></div>
+                    <div class="tech-circle tech-circle-2"></div>
+                    <div class="tech-circle tech-circle-3"></div>
+                    <div class="code-lines">
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Role Selection Section -->
+        <section class="role-section">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Access Level</h2>
+                <p class="section-subtitle">Select your role to access personalized features and tools</p>
+            </div>
+
+            <div class="role-grid">
+                <a href="../html/student_login.html" class="role-card student">
+                    <div class="card-header">
+                        <div class="icon-container">
+                            <div class="icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <div class="card-badge">Student Portal</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Student Access</h3>
+                        <p>Take exams, view results, and track your academic progress with our comprehensive student dashboard.</p>
+                        <div class="card-features">
+                            <span class="feature">📊 Real-time Results</span>
+                            <span class="feature">📚 Study Materials</span>
+                            <span class="feature">⏱️ Exam Schedule</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="access-text">Access Student Portal →</span>
+                    </div>
+                </a>
+
+                <a href="../html/teacher-login.html" class="role-card faculty">
+                    <div class="card-header">
+                        <div class="icon-container">
+                            <div class="icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="card-badge">Faculty Portal</div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Faculty Access</h3>
+                        <p>Create and manage exams, monitor student performance, and access advanced analytics tools.</p>
+                        <div class="card-features">
+                            <span class="feature">📝 Create Exams</span>
+                            <span class="feature">📈 Analytics</span>
+                            <span class="feature">👥 Student Management</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="access-text">Access Faculty Portal →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">Platform Features</h2>
+                <p class="section-subtitle">Cutting-edge technology for modern education</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Secure Environment</h4>
+                    <p>Advanced security protocols ensure exam integrity and data protection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Real-time Processing</h4>
+                    <p>Instant result generation and live performance tracking capabilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4>Multi-device Support</h4>
+                    <p>Access from desktop, tablet, or mobile with responsive design.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4>AI-Powered Analytics</h4>
+                    <p>Smart insights and predictive analytics for better learning outcomes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Christ University</h4>
+                <p>Department of AIML and Data Science<br>Bangalore, India</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact IT</a></li>
+                    <li><a href="#">System Status</a></li>
+                </ul>
+            </div>
         </div>
-      </a>
-    </section>
-  </main>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Christ University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                const menu = btn.parentElement.querySelector('.dropdown-menu');
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                menu.style.display = (!expanded ? 'block' : 'none');
+            });
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                element.textContent = Math.floor(current);
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+
+        // Initialize counters when visible
+        const observerOptions = { threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.dataset.target);
+                        animateCounter(stat, target);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsContainer = document.querySelector('.stats-container');
+            if (statsContainer) observer.observe(statsContainer);
+        });
+    </script>
 </body>
 </html>
+
+
+

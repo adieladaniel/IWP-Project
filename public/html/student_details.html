@@ -25,11 +25,12 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/favicon.png" sizes="8x8" type="image/png">
   <title>Personal Details — Lab Exam Portal</title>
   <link rel="stylesheet" href="../css/student_details.css" />
 </head>
@@ -52,18 +53,18 @@
       <p class="subtitle">View and manage your profile information</p>
     </section>
 
-    <!-- Loading state -->
+    <!-- Loading state 
     <div id="loading" class="loading-state">
       <p>Loading student details...</p>
     </div>
 
-    <!-- Error state -->
+    <!-- Error state 
     <div id="errorState" class="error-state" style="display: none;">
       <p id="errorMessage">Failed to load student details. Please try again.</p>
       <button onclick="fetchStudentDetails()" class="retry-btn">Retry</button>
     </div>
 
-    <!-- Student details card -->
+    <!-- Student details card 
     <section id="profileCard" class="profile-card" style="display: none;">
       <div class="profile-header">
         <div class="profile-pic-container">
@@ -177,4 +178,128 @@
   </script>
 </body>
 </html>
+ -->
 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Details - Lab Exam Portal</title>
+    <link rel="stylesheet" href="../css/student_details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="../images/christlogo.png" alt="Christ University logo" class="logo">
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+            </div>
+            <div class="user-actions">
+                <a href="../html/student.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="details-wrapper">
+        <section class="details-hero">
+            <h1 class="title gradient-text">Student Profile</h1>
+            <p class="subtitle">All your academic and personal details in one secure place.</p>
+        </section>
+
+        <!-- Loading/Error states and profile rendered by JS -->
+        <div id="profileView"></div>
+    </main>
+
+    <script>
+    // Sample: You would replace this logic for fetching student details from server/api/localStorage
+    // For demonstration, this script expects localStorage.studentData and /student/details/{email} endpoint
+    
+    function renderProfile(profile) {
+        document.getElementById('profileView').innerHTML = `
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-pic-container">
+                        <img src="../images/profile-placeholder.png" alt="Profile picture" class="profile-pic">
+                    </div>
+                    <div class="profile-name">
+                        <h2>${profile.name || ''}</h2>
+                        <div class="student-id">${profile.reg_no ? `Reg No: ${profile.reg_no}` : ''}</div>
+                    </div>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="label">Full Name</span>
+                        <span class="value">${profile.name || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Register Number</span>
+                        <span class="value">${profile.reg_no || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Department</span>
+                        <span class="value">${profile.dept || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Class</span>
+                        <span class="value">${profile.class || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Email</span>
+                        <span class="value">${profile.email || 'N/A'}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderLoading() {
+        document.getElementById('profileView').innerHTML = `
+            <div class="loading-state">Loading profile details...</div>
+        `;
+    }
+
+    function renderError() {
+        document.getElementById('profileView').innerHTML = `
+            <div class="error-state">
+                <p>Unable to load student details.</p>
+                <button class="retry-btn" onclick="window.location.reload()">Retry</button>
+            </div>
+        `;
+    }
+
+    // Main profile logic
+    document.addEventListener('DOMContentLoaded', async () => {
+        renderLoading();
+        let student = null;
+        try {
+            const studentData = JSON.parse(localStorage.getItem('studentData'));
+            if (!studentData || !studentData.email) throw new Error();
+            // Fetch details from DB API for latest info
+            const res = await fetch(`/student/details/${encodeURIComponent(studentData.email)}`);
+            if (res.ok) {
+                const data = await res.json();
+                student = data.student;
+            } else {
+                student = studentData; // Fallback: read from localStorage
+            }
+            renderProfile(student);
+        } catch (e) {
+            renderError();
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,211 +1,2058 @@
-<!DOCTYPE html>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Lab Exam Portal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Lab Marks — Lab Exam Portal</title>
+  <link rel="stylesheet" href="../css/student-data.css" />
 </head>
 <body>
-    <header>
-    <img src="../images/christlogo.png" alt="">
-    <div>Department of AIML and Data Science</div>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+      <div class="brand">
+        <span class="dept">Department of AIML and Data Science</span>
+      </div>
+      <div class="user-actions">
+        <a href="../html/teacher-dashboard.html" class="back-btn">Back to Dashboard</a>
+      </div>
+    </div>
   </header>
-    <div id="student-data">
-        <h2>Student Lab Marks</h2>
-        <div class="search">
-            <input type="text" placeholder="Enter Register Number or Name: " class="search-regno">
-            <input type="button" value="Search" class="search-button">
-        </div>
-        <table border="1" style="border-collapse: collapse; width: 60%; text-align: center;">
+
+  <main class="student-data-wrapper" role="main">
+    <section class="student-data-hero">
+      <h1 class="title">Student Lab Marks</h1>
+      <p class="subtitle">Search and enter student marks and registration details</p>
+    </section>
+
+    <!-- Exam Type Selection 
+    <div class="exam-type-container">
+      <h3 class="exam-type-title">Select Exam Type</h3>
+      <div class="exam-type-options">
+        <label class="exam-type-option">
+          <input type="radio" name="examType" value="mid" id="midSemester" checked />
+          <span class="option-text">Mid Semester Lab</span>
+        </label>
+        <label class="exam-type-option">
+          <input type="radio" name="examType" value="end" id="endSemester" />
+          <span class="option-text">End Semester Lab</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchBox" placeholder="Type student name and press Enter..." autocomplete="off" />
+        <div class="search-icon">🔍</div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table class="student-table" aria-label="Student Data Table">
+        <thead>
+          <tr>
             <th>Name</th>
             <th>Register Number</th>
-            <th>Marks</th>
-            <tr>
-                <td>Abhishek Anil George</td>
-                <td>2362005</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adiel A Daniel</td>
-                <td>2362007</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adin Sam</td>
-                <td>2362008</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adithya P</td>
-                <td>2362010</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adithya Agrawal</td>
-                <td>2362012</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adorn Jim Mathew</td>
-                <td>2362013</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Adriel Clinton</td>
-                <td>2362019</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Airene V John</td>
-                <td>2362020</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Akash Dileep</td>
-                <td>2362022</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Akhil Alex</td>
-                <td>2362023</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Anantha Narayan</td>
-                <td>2362030</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Andrea Mary P T</td>
-                <td>2362038</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Ashik Tomy</td>
-                <td>2362040</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Ashutosh Das</td>
-                <td>2362044</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Asin Tressa</td>
-                <td>2362045</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Avadhanam Hasini</td>
-                <td>2362047</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Davis K Sony</td>
-                <td>2362049</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Delna Liz Denny</td>
-                <td>2362050</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Felix Francis</td>
-                <td>2362069</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Giftson Samuel Raj I</td>
-                <td>2362072</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Gladwin B Pullan</td>
-                <td>2362080</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Ishika Gupta</td>
-                <td>2362085</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Abhishek Rufus</td>
-                <td>2362087</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Vyashnavi</td>
-                <td>2362092</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Jewel Titus</td>
-                <td>2362095</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Jio Shiju</td>
-                <td>2362100</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Bhavyashree</td>
-                <td>2362102</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Kavin Srini</td>
-                <td>2362103</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Lemuel Fernandez</td>
-                <td>2362105</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>M Haripriya</td>
-                <td>2362108</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Mayanak Sharma</td>
-                <td>2362110</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Melwin K</td>
-                <td>2362112</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Melwin Robinson</td>
-                <td>2362115</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Muthu Anurag</td>
-                <td>2362120</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Nandana</td>
-                <td>2362121</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-            <tr>
-                <td>Nandini</td>
-                <td>2362123</td>
-                <td><input type="text" placeholder="Enter Marks" class="search-button"></td>
-            </tr>
-        </table>
-        <div class="back-to-total-classes">
-                <img src="../images/back.png" alt="" class="back-to-login-image">
-                <a href="../html/teacher-dashboard.html" class="back-button">Submit </a>
-        </div>  
+            <th>Marks (Out of 100)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="student-name">Abhishek Anil George</td><td class="register-number">2362005</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adiel A Daniel</td><td class="register-number">2362007</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adin Sam</td><td class="register-number">2362008</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adithya P</td><td class="register-number">2362010</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adithya Agrawal</td><td class="register-number">2362012</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adorn Jim Mathew</td><td class="register-number">2362013</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Adriel Clinton</td><td class="register-number">2362019</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Airene V John</td><td class="register-number">2362020</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Akash Dileep</td><td class="register-number">2362022</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Akhil Alex</td><td class="register-number">2362023</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Anantha Narayan</td><td class="register-number">2362030</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Andrea Mary P T</td><td class="register-number">2362038</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Ashik Tomy</td><td class="register-number">2362040</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Ashutosh Das</td><td class="register-number">2362044</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Asin Tressa</td><td class="register-number">2362045</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Avadhanam Hasini</td><td class="register-number">2362047</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Davis K Sony</td><td class="register-number">2362049</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Delna Liz Denny</td><td class="register-number">2362050</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Felix Francis</td><td class="register-number">2362069</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Giftson Samuel Raj I</td><td class="register-number">2362072</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Gladwin B Pullan</td><td class="register-number">2362080</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Ishika Gupta</td><td class="register-number">2362085</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Abhishek Rufus</td><td class="register-number">2362087</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Vyashnavi</td><td class="register-number">2362092</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Jewel Titus</td><td class="register-number">2362095</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Jio Shiju</td><td class="register-number">2362100</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Bhavyashree</td><td class="register-number">2362102</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Kavin Srini</td><td class="register-number">2362103</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Lemuel Fernandez</td><td class="register-number">2362105</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">M Haripriya</td><td class="register-number">2362108</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Mayanak Sharma</td><td class="register-number">2362110</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Melwin K</td><td class="register-number">2362112</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Melwin Robinson</td><td class="register-number">2362115</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Muthu Anurag</td><td class="register-number">2362120</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Nandana</td><td class="register-number">2362121</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+          <tr><td class="student-name">Nandini</td><td class="register-number">2362123</td><td class="marks-cell"><input type="number" class="marks-input" min="0" max="100" placeholder="0-100" /></td></tr>
+        </tbody>
+      </table>
     </div>
+
+    <div class="action-buttons">
+      <button class="save-marks-btn" onclick="saveAllMarks()">Save All Marks</button>
+      <button class="clear-marks-btn" onclick="clearAllMarks()">Clear All Marks</button>
+    </div>
+
+    <!-- Search Results Message 
+    <div id="searchMessage" class="search-message" style="display: none;"></div>
+  </main>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const rows = Array.from(document.querySelectorAll('.student-table tbody tr'));
+    const searchMessage = document.getElementById('searchMessage');
+
+    // Search functionality
+    searchBox.addEventListener('keydown', function(event) {
+      if(event.key === 'Enter') {
+        event.preventDefault();
+        const query = this.value.trim().toLowerCase();
+        if(!query) return;
+
+        // Clear previous highlights
+        rows.forEach(row => row.classList.remove('highlight'));
+
+        // Find matching student
+        let matchedRow = rows.find(row => {
+          const name = row.querySelector('.student-name').textContent.toLowerCase();
+          return name.includes(query) || name === query;
+        });
+
+        if(matchedRow) {
+          // Scroll to and highlight the matched student
+          matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          matchedRow.classList.add('highlight');
+          
+          // Focus on the marks input for the found student
+          const marksInput = matchedRow.querySelector('.marks-input');
+          setTimeout(() => marksInput.focus(), 500);
+          
+          // Show success message
+          const studentName = matchedRow.querySelector('.student-name').textContent;
+          showMessage(`✅ Found: ${studentName}`, 'success');
+          
+          // Remove highlight after 3 seconds
+          setTimeout(() => matchedRow.classList.remove('highlight'), 3000);
+        } else {
+          // Show not found message
+          showMessage('❌ Student not found in the list', 'error');
+        }
+      }
+    });
+
+    // Real-time search suggestions
+    searchBox.addEventListener('input', function() {
+      const query = this.value.trim().toLowerCase();
+      if(query.length < 2) {
+        rows.forEach(row => row.style.display = '');
+        return;
+      }
+
+      rows.forEach(row => {
+        const name = row.querySelector('.student-name').textContent.toLowerCase();
+        if(name.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+
+    // Marks input validation
+    document.addEventListener('DOMContentLoaded', function() {
+      const marksInputs = document.querySelectorAll('.marks-input');
+      
+      marksInputs.forEach(input => {
+        input.addEventListener('input', function() {
+          let value = parseInt(this.value);
+          
+          // Validate marks range
+          if(value < 0) this.value = 0;
+          if(value > 100) this.value = 100;
+          
+          // Color code based on marks
+          if(this.value) {
+            value = parseInt(this.value);
+            if(value >= 90) {
+              this.style.color = '#2e7d32'; // Green for excellent
+              this.style.fontWeight = 'bold';
+            } else if(value >= 70) {
+              this.style.color = '#1976d2'; // Blue for good
+              this.style.fontWeight = '600';
+            } else if(value >= 50) {
+              this.style.color = '#f57c00'; // Orange for average
+              this.style.fontWeight = '500';
+            } else {
+              this.style.color = '#d32f2f'; // Red for below average
+              this.style.fontWeight = 'bold';
+            }
+          } else {
+            this.style.color = '';
+            this.style.fontWeight = '';
+          }
+        });
+      });
+    });
+
+    function saveAllMarks() {
+      const examType = document.querySelector('input[name="examType"]:checked').value;
+      const examTypeName = examType === 'mid' ? 'Mid Semester Lab' : 'End Semester Lab';
+      
+      const marksData = [];
+      const marksInputs = document.querySelectorAll('.marks-input');
+      
+      marksInputs.forEach(input => {
+        const row = input.closest('tr');
+        const studentName = row.querySelector('.student-name').textContent;
+        const registerNumber = row.querySelector('.register-number').textContent;
+        const marks = input.value;
+        
+        if(marks) {
+          marksData.push({
+            name: studentName,
+            registerNumber: registerNumber,
+            marks: parseInt(marks),
+            examType: examTypeName
+          });
+        }
+      });
+
+      if(marksData.length === 0) {
+        showMessage('⚠️ No marks entered to save', 'error');
+        return;
+      }
+
+      // Here you would typically send the data to your backend
+      console.log('Marks to save:', marksData);
+      showMessage(`✅ Saved ${examTypeName} marks for ${marksData.length} students`, 'success');
+    }
+
+    function clearAllMarks() {
+      if(confirm('Are you sure you want to clear all entered marks?')) {
+        const marksInputs = document.querySelectorAll('.marks-input');
+        marksInputs.forEach(input => {
+          input.value = '';
+          input.style.color = '';
+          input.style.fontWeight = '';
+        });
+        showMessage('🔄 All marks cleared', 'success');
+      }
+    }
+
+    function showMessage(text, type) {
+      searchMessage.textContent = text;
+      searchMessage.className = `search-message ${type}`;
+      searchMessage.style.display = 'block';
+      
+      setTimeout(() => {
+        searchMessage.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Lab Marks - Lab Exam Portal</title>
+    <link rel="stylesheet" href="../css/student-data.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Background animation -
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Header 
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+            </div>
+            <div class="user-actions">
+                <a href="../html/teacher-dashboard.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Message Notification 
+    <div id="searchMessage" class="search-message" style="display: none;"></div>
+
+    <main class="student-data-wrapper">
+        <section class="student-data-hero">
+            <h1 class="title gradient-text">Student Lab Marks</h1>
+            <p class="subtitle">Search and enter student marks and registration details</p>
+        </section>
+
+        <section class="exam-type-container">
+            <h2 class="exam-type-title">Select Exam Type</h2>
+            <div class="exam-type-options">
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="mid" checked />
+                    <span class="option-text">Mid Semester</span>
+                </label>
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="end" />
+                    <span class="option-text">End Semester</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Search by name or register number..." />
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Register Number</th>
+                        <th>Marks (Out of 100)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="student-name">Abhishek Anil George</td><td class="register-number">2362005</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adiel A Daniel</td><td class="register-number">2362007</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adin Sam</td><td class="register-number">2362008</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adithya P</td><td class="register-number">2362010</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adithya Agrawal</td><td class="register-number">2362012</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adorn Jim Mathew</td><td class="register-number">2362013</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adriel Clinton</td><td class="register-number">2362019</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Airene V John</td><td class="register-number">2362020</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Akash Dileep</td><td class="register-number">2362022</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Akhil Alex</td><td class="register-number">2362023</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Anantha Narayan</td><td class="register-number">2362030</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Andrea Mary P T</td><td class="register-number">2362038</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ashik Tomy</td><td class="register-number">2362040</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ashutosh Das</td><td class="register-number">2362044</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Asin Tressa</td><td class="register-number">2362045</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Avadhanam Hasini</td><td class="register-number">2362047</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Davis K Sony</td><td class="register-number">2362049</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Delna Liz Denny</td><td class="register-number">2362050</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Felix Francis</td><td class="register-number">2362069</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Giftson Samuel Raj I</td><td class="register-number">2362072</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Gladwin B Pullan</td><td class="register-number">2362080</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ishika Gupta</td><td class="register-number">2362085</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Abhishek Rufus</td><td class="register-number">2362087</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Vyashnavi</td><td class="register-number">2362092</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Jewel Titus</td><td class="register-number">2362095</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Jio Shiju</td><td class="register-number">2362100</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Bhavyashree</td><td class="register-number">2362102</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Kavin Srini</td><td class="register-number">2362103</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Lemuel Fernandez</td><td class="register-number">2362105</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">M Haripriya</td><td class="register-number">2362108</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Mayanak Sharma</td><td class="register-number">2362110</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Melwin K</td><td class="register-number">2362112</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Melwin Robinson</td><td class="register-number">2362115</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Muthu Anurag</td><td class="register-number">2362120</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Nandana</td><td class="register-number">2362121</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Nandini</td><td class="register-number">2362123</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="action-buttons">
+            <button class="save-marks-btn" onclick="saveAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                </svg>
+                Save Marks
+            </button>
+            <button class="clear-marks-btn" onclick="clearAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+                Clear All
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const rows = Array.from(document.querySelectorAll('.student-table tbody tr'));
+        const searchMessage = document.getElementById('searchMessage');
+
+        // Search functionality
+        searchBox.addEventListener('keydown', function(event) {
+            if(event.key === 'Enter') {
+                event.preventDefault();
+                const query = this.value.trim().toLowerCase();
+                if(!query) return;
+
+                // Clear previous highlights
+                rows.forEach(row => row.classList.remove('highlight'));
+
+                // Find matching student
+                let matchedRow = rows.find(row => {
+                    const name = row.querySelector('.student-name').textContent.toLowerCase();
+                    const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                    return name.includes(query) || regNumber.includes(query);
+                });
+
+                if(matchedRow) {
+                    // Scroll to and highlight the matched student
+                    matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    matchedRow.classList.add('highlight');
+                    
+                    // Focus on the marks input for the found student
+                    const marksInput = matchedRow.querySelector('.marks-input');
+                    setTimeout(() => marksInput.focus(), 500);
+                    
+                    // Show success message
+                    const studentName = matchedRow.querySelector('.student-name').textContent;
+                    showMessage(`✅ Found: ${studentName}`, 'success');
+                    
+                    // Remove highlight after 3 seconds
+                    setTimeout(() => matchedRow.classList.remove('highlight'), 3000);
+                } else {
+                    // Show not found message
+                    showMessage('❌ Student not found in the list', 'error');
+                }
+            }
+        });
+
+        // Real-time search suggestions
+        searchBox.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if(query.length < 2) {
+                rows.forEach(row => row.style.display = '');
+                return;
+            }
+
+            rows.forEach(row => {
+                const name = row.querySelector('.student-name').textContent.toLowerCase();
+                const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                if(name.includes(query) || regNumber.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Marks input validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            marksInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    let value = parseInt(this.value);
+                    
+                    // Validate marks range
+                    if(value < 0) this.value = 0;
+                    if(value > 100) this.value = 100;
+                    
+                    // Color code based on marks
+                    if(this.value) {
+                        value = parseInt(this.value);
+                        if(value >= 90) {
+                            this.style.color = '#2e7d32'; // Green for excellent
+                            this.style.fontWeight = 'bold';
+                        } else if(value >= 70) {
+                            this.style.color = '#1976d2'; // Blue for good
+                            this.style.fontWeight = '600';
+                        } else if(value >= 50) {
+                            this.style.color = '#f57c00'; // Orange for average
+                            this.style.fontWeight = '500';
+                        } else {
+                            this.style.color = '#d32f2f'; // Red for below average
+                            this.style.fontWeight = 'bold';
+                        }
+                    } else {
+                        this.style.color = '';
+                        this.style.fontWeight = '';
+                    }
+                });
+            });
+        });
+
+        function saveAllMarks() {
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const examTypeName = examType === 'mid' ? 'Mid Semester Lab' : 'End Semester Lab';
+            
+            const marksData = [];
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            marksInputs.forEach(input => {
+                const row = input.closest('tr');
+                const studentName = row.querySelector('.student-name').textContent;
+                const registerNumber = row.querySelector('.register-number').textContent;
+                const marks = input.value;
+                
+                if(marks) {
+                    marksData.push({
+                        name: studentName,
+                        registerNumber: registerNumber,
+                        marks: parseInt(marks),
+                        examType: examTypeName
+                    });
+                }
+            });
+
+            if(marksData.length === 0) {
+                showMessage('⚠️ No marks entered to save', 'error');
+                return;
+            }
+
+            // Here you would typically send the data to your backend
+            console.log('Marks to save:', marksData);
+            showMessage(`✅ Saved ${examTypeName} marks for ${marksData.length} students`, 'success');
+        }
+
+        function clearAllMarks() {
+            if(confirm('Are you sure you want to clear all entered marks?')) {
+                const marksInputs = document.querySelectorAll('.marks-input');
+                marksInputs.forEach(input => {
+                    input.value = '';
+                    input.style.color = '';
+                    input.style.fontWeight = '';
+                });
+                showMessage('🔄 All marks cleared', 'success');
+            }
+        }
+
+        function showMessage(text, type) {
+            searchMessage.textContent = text;
+            searchMessage.className = `search-message ${type}`;
+            searchMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                searchMessage.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Lab Marks - Lab Exam Portal</title>
+    <link rel="stylesheet" href="../css/student-data.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Background animation 
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Header 
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+            </div>
+            <div class="user-actions">
+                <a href="../html/teacher-dashboard.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Message Notification 
+    <div id="searchMessage" class="search-message" style="display: none;"></div>
+
+    <main class="student-data-wrapper">
+        <section class="student-data-hero">
+            <h1 class="title gradient-text">Student Lab Marks</h1>
+            <p class="subtitle">Search and enter student marks and registration details</p>
+        </section>
+
+        <section class="exam-type-container">
+            <h2 class="exam-type-title">Select Exam Type</h2>
+            <div class="exam-type-options">
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="mid" checked />
+                    <span class="option-text">Mid Semester</span>
+                </label>
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="end" />
+                    <span class="option-text">End Semester</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Search by name or register number..." />
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Register Number</th>
+                        <th>Marks (Out of 100)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="student-name">Abhishek Anil George</td><td class="register-number">2362005</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adiel A Daniel</td><td class="register-number">2362007</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adin Sam</td><td class="register-number">2362008</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adithya P</td><td class="register-number">2362010</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adithya Agrawal</td><td class="register-number">2362012</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adorn Jim Mathew</td><td class="register-number">2362013</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Adriel Clinton</td><td class="register-number">2362019</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Airene V John</td><td class="register-number">2362020</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Akash Dileep</td><td class="register-number">2362022</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Akhil Alex</td><td class="register-number">2362023</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Anantha Narayan</td><td class="register-number">2362030</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Andrea Mary P T</td><td class="register-number">2362038</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ashik Tomy</td><td class="register-number">2362040</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ashutosh Das</td><td class="register-number">2362044</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Asin Tressa</td><td class="register-number">2362045</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Avadhanam Hasini</td><td class="register-number">2362047</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Davis K Sony</td><td class="register-number">2362049</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Delna Liz Denny</td><td class="register-number">2362050</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Felix Francis</td><td class="register-number">2362069</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Giftson Samuel Raj I</td><td class="register-number">2362072</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Gladwin B Pullan</td><td class="register-number">2362080</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Ishika Gupta</td><td class="register-number">2362085</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Abhishek Rufus</td><td class="register-number">2362087</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Vyashnavi</td><td class="register-number">2362092</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Jewel Titus</td><td class="register-number">2362095</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Jio Shiju</td><td class="register-number">2362100</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Bhavyashree</td><td class="register-number">2362102</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Kavin Srini</td><td class="register-number">2362103</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Lemuel Fernandez</td><td class="register-number">2362105</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">M Haripriya</td><td class="register-number">2362108</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Mayanak Sharma</td><td class="register-number">2362110</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Melwin K</td><td class="register-number">2362112</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Melwin Robinson</td><td class="register-number">2362115</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Muthu Anurag</td><td class="register-number">2362120</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Nandana</td><td class="register-number">2362121</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                    <tr><td class="student-name">Nandini</td><td class="register-number">2362123</td><td class="marks-cell"><input type="number" min="0" max="100" class="marks-input" /></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="action-buttons">
+            <button class="save-marks-btn" onclick="saveAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                </svg>
+                Save Marks
+            </button>
+            <button class="clear-marks-btn" onclick="clearAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+                Clear All
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const rows = Array.from(document.querySelectorAll('.student-table tbody tr'));
+        const searchMessage = document.getElementById('searchMessage');
+
+        // Search functionality
+        searchBox.addEventListener('keydown', function(event) {
+            if(event.key === 'Enter') {
+                event.preventDefault();
+                const query = this.value.trim().toLowerCase();
+                if(!query) return;
+
+                // Clear previous highlights
+                rows.forEach(row => row.classList.remove('highlight'));
+
+                // Find matching student
+                let matchedRow = rows.find(row => {
+                    const name = row.querySelector('.student-name').textContent.toLowerCase();
+                    const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                    return name.includes(query) || regNumber.includes(query);
+                });
+
+                if(matchedRow) {
+                    // Scroll to and highlight the matched student
+                    matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    matchedRow.classList.add('highlight');
+                    
+                    // Focus on the marks input for the found student
+                    const marksInput = matchedRow.querySelector('.marks-input');
+                    setTimeout(() => marksInput.focus(), 500);
+                    
+                    // Show success message
+                    const studentName = matchedRow.querySelector('.student-name').textContent;
+                    showMessage(`✅ Found: ${studentName}`, 'success');
+                    
+                    // Remove highlight after 3 seconds
+                    setTimeout(() => matchedRow.classList.remove('highlight'), 3000);
+                } else {
+                    // Show not found message
+                    showMessage('❌ Student not found in the list', 'error');
+                }
+            }
+        });
+
+        // Real-time search suggestions
+        searchBox.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if(query.length < 2) {
+                rows.forEach(row => row.style.display = '');
+                return;
+            }
+
+            rows.forEach(row => {
+                const name = row.querySelector('.student-name').textContent.toLowerCase();
+                const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                if(name.includes(query) || regNumber.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Marks input validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            marksInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    let value = parseInt(this.value);
+                    
+                    // Validate marks range
+                    if(value < 0) this.value = 0;
+                    if(value > 100) this.value = 100;
+                    
+                    // Color code based on marks
+                    if(this.value) {
+                        value = parseInt(this.value);
+                        if(value >= 90) {
+                            this.style.color = '#2e7d32'; // Green for excellent
+                            this.style.fontWeight = 'bold';
+                        } else if(value >= 70) {
+                            this.style.color = '#1976d2'; // Blue for good
+                            this.style.fontWeight = '600';
+                        } else if(value >= 50) {
+                            this.style.color = '#f57c00'; // Orange for average
+                            this.style.fontWeight = '500';
+                        } else {
+                            this.style.color = '#d32f2f'; // Red for below average
+                            this.style.fontWeight = 'bold';
+                        }
+                    } else {
+                        this.style.color = '';
+                        this.style.fontWeight = '';
+                    }
+                });
+            });
+        });
+
+        // IMPROVED saveAllMarks function with better error handling
+        async function saveAllMarks() {
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const examTypeName = examType === 'mid' ? 'Mid Semester Lab' : 'End Semester Lab';
+            
+            console.log('📝 Starting save process for:', examTypeName);
+            
+            const marksData = [];
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            // Collect marks data with better validation
+            marksInputs.forEach((input, index) => {
+                const row = input.closest('tr');
+                const studentName = row.querySelector('.student-name').textContent.trim();
+                const registerNumber = row.querySelector('.register-number').textContent.trim();
+                const marksValue = input.value.trim();
+                
+                // Only include rows with valid marks entered
+                if (marksValue !== '' && marksValue !== null && !isNaN(marksValue)) {
+                    const marks = parseInt(marksValue);
+                    
+                    if (marks >= 0 && marks <= 100) {
+                        marksData.push({
+                            registerNumber: registerNumber,
+                            studentName: studentName,
+                            marks: marks,
+                            subjectCode: 'IWP',
+                            subjectName: 'Internet and Web Programming'
+                        });
+                        console.log(`✅ Added to save queue: ${studentName} (${registerNumber}) - ${marks}`);
+                    } else {
+                        console.warn(`⚠️ Invalid marks for ${studentName}: ${marks}`);
+                    }
+                }
+            });
+
+            if(marksData.length === 0) {
+                showMessage('⚠️ No valid marks entered to save. Please enter marks (0-100) for at least one student.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const saveButton = document.querySelector('.save-marks-btn');
+            const originalHTML = saveButton.innerHTML;
+            saveButton.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 16px; height: 16px; border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Saving ${marksData.length} marks...
+                </div>
+            `;
+            saveButton.disabled = true;
+
+            try {
+                console.log('🚀 Sending marks data to server:', { examType, marksData });
+                
+                const response = await fetch('/api/save-marks', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        examType: examType,
+                        marksData: marksData
+                    })
+                });
+
+                console.log('📡 Response status:', response.status);
+                
+                let result;
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    throw new Error('Server returned invalid response format');
+                }
+                
+                console.log('📋 Server response:', result);
+
+                if (response.ok && result.success) {
+                    showMessage(`✅ ${result.message}`, 'success');
+                    
+                    // Clear the successfully saved marks
+                    if (result.results && result.results.length > 0) {
+                        result.results.forEach(savedResult => {
+                            const row = rows.find(row => 
+                                row.querySelector('.register-number').textContent.trim() === savedResult.registerNumber
+                            );
+                            if (row) {
+                                const input = row.querySelector('.marks-input');
+                                input.style.backgroundColor = '#d4edda';
+                                input.style.borderColor = '#c3e6cb';
+                                setTimeout(() => {
+                                    input.style.backgroundColor = '';
+                                    input.style.borderColor = '';
+                                }, 3000);
+                            }
+                        });
+                    }
+                } else {
+                    // Show detailed error message
+                    let errorMessage = result.message || 'Failed to save marks';
+                    
+                    if (result.errors && result.errors.length > 0) {
+                        errorMessage += '\n\nDetails:\n' + result.errors.map(err => 
+                            `• ${err.studentName || err.registerNumber}: ${err.error || err}`
+                        ).join('\n');
+                    }
+                    
+                    showMessage(`❌ ${errorMessage}`, 'error');
+                    console.error('❌ Save marks error:', result);
+                }
+
+            } catch (error) {
+                console.error('💥 Network/Server error:', error);
+                showMessage(`❌ Network error: ${error.message}. Please check if the server is running and try again.`, 'error');
+            } finally {
+                // Reset button state
+                saveButton.innerHTML = originalHTML;
+                saveButton.disabled = false;
+            }
+        }
+
+        function clearAllMarks() {
+            if(confirm('Are you sure you want to clear all entered marks?')) {
+                const marksInputs = document.querySelectorAll('.marks-input');
+                marksInputs.forEach(input => {
+                    input.value = '';
+                    input.style.color = '';
+                    input.style.fontWeight = '';
+                    input.style.backgroundColor = '';
+                    input.style.borderColor = '';
+                });
+                showMessage('🔄 All marks cleared', 'success');
+            }
+        }
+
+        function showMessage(text, type) {
+            searchMessage.innerHTML = text.replace(/\n/g, '<br>'); // Handle line breaks
+            searchMessage.className = `search-message ${type}`;
+            searchMessage.style.display = 'block';
+            
+            // Auto-hide after longer time for error messages
+            const hideTime = type === 'error' ? 8000 : 5000;
+            setTimeout(() => {
+                searchMessage.style.display = 'none';
+            }, hideTime);
+        }
+
+        // Add CSS for loading spinner
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            .search-message.error {
+                white-space: pre-line;
+                max-width: 400px;
+                line-height: 1.4;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Lab Marks - Lab Exam Portal</title>
+    <link rel="stylesheet" href="../css/student-data.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Background animation -
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Header 
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+            </div>
+            <div class="user-actions">
+                <a href="../html/teacher-dashboard.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Message Notification -
+    <div id="searchMessage" class="search-message" style="display: none;"></div>
+
+    <main class="student-data-wrapper">
+        <section class="student-data-hero">
+            <h1 class="title gradient-text">Student Lab Marks</h1>
+            <p class="subtitle">Enter marks for writeup, execution, and viva components</p>
+        </section>
+
+        <section class="exam-type-container">
+            <h2 class="exam-type-title">Select Exam Type</h2>
+            <div class="exam-type-options">
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="mid" checked />
+                    <span class="option-text">Mid Semester</span>
+                </label>
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="end" />
+                    <span class="option-text">End Semester</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="subject-selection-container">
+            <h2 class="subject-selection-title">Select Subject</h2>
+            <div class="subject-selection-options">
+                <label class="subject-option">
+                    <input type="radio" name="subjectCode" value="CSEAM531P" checked />
+                    <span class="subject-text">Machine Learning</span>
+                </label>
+                <label class="subject-option">
+                    <input type="radio" name="subjectCode" value="CSE532P" />
+                    <span class="subject-text">Cloud Computing</span>
+                </label>
+                <label class="subject-option">
+                    <input type="radio" name="subjectCode" value="CSE534P" />
+                    <span class="subject-text">Internet & Web Programming</span>
+                </label>
+                <label class="subject-option">
+                    <input type="radio" name="subjectCode" value="BTES552" />
+                    <span class="subject-text">Drone Technologies</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Search by name or register number..." />
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Register Number</th>
+                        <th>Writeup (0-25)</th>
+                        <th>Execution (0-25)</th>
+                        <th>Viva (0-25)</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="student-name">Abhishek Anil George</td><td class="register-number">2362005</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adiel A Daniel</td><td class="register-number">2362007</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adin Sam</td><td class="register-number">2362008</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adithya P</td><td class="register-number">2362010</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adithya Agrawal</td><td class="register-number">2362012</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adorn Jim Mathew</td><td class="register-number">2362013</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adriel Clinton</td><td class="register-number">2362019</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Airene V John</td><td class="register-number">2362020</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Akash Dileep</td><td class="register-number">2362022</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Akhil Alex</td><td class="register-number">2362023</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Anantha Narayan</td><td class="register-number">2362030</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Andrea Mary P T</td><td class="register-number">2362038</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ashik Tomy</td><td class="register-number">2362040</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ashutosh Das</td><td class="register-number">2362044</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Asin Tressa</td><td class="register-number">2362045</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Avadhanam Hasini</td><td class="register-number">2362047</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Davis K Sony</td><td class="register-number">2362049</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Delna Liz Denny</td><td class="register-number">2362050</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Felix Francis</td><td class="register-number">2362069</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Giftson Samuel Raj I</td><td class="register-number">2362072</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Gladwin B Pullan</td><td class="register-number">2362080</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ishika Gupta</td><td class="register-number">2362085</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Abhishek Rufus</td><td class="register-number">2362087</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Vyashnavi</td><td class="register-number">2362092</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Jewel Titus</td><td class="register-number">2362095</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Jio Shiju</td><td class="register-number">2362100</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Bhavyashree</td><td class="register-number">2362102</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Kavin Srini</td><td class="register-number">2362103</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Lemuel Fernandez</td><td class="register-number">2362105</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">M Haripriya</td><td class="register-number">2362108</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Mayanak Sharma</td><td class="register-number">2362110</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Melwin K</td><td class="register-number">2362112</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Melwin Robinson</td><td class="register-number">2362115</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Muthu Anurag</td><td class="register-number">2362120</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Nandana</td><td class="register-number">2362121</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Nandini</td><td class="register-number">2362123</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="action-buttons">
+            <button class="save-marks-btn" onclick="saveAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                </svg>
+                Save Marks
+            </button>
+            <button class="clear-marks-btn" onclick="clearAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+                Clear All
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const rows = Array.from(document.querySelectorAll('.student-table tbody tr'));
+        const searchMessage = document.getElementById('searchMessage');
+
+        // Search functionality
+        searchBox.addEventListener('keydown', function(event) {
+            if(event.key === 'Enter') {
+                event.preventDefault();
+                const query = this.value.trim().toLowerCase();
+                if(!query) return;
+
+                rows.forEach(row => row.classList.remove('highlight'));
+
+                let matchedRow = rows.find(row => {
+                    const name = row.querySelector('.student-name').textContent.toLowerCase();
+                    const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                    return name.includes(query) || regNumber.includes(query);
+                });
+
+                if(matchedRow) {
+                    matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    matchedRow.classList.add('highlight');
+                    
+                    const firstInput = matchedRow.querySelector('.writeup-input');
+                    setTimeout(() => firstInput.focus(), 500);
+                    
+                    const studentName = matchedRow.querySelector('.student-name').textContent;
+                    showMessage(`✅ Found: ${studentName}`, 'success');
+                    
+                    setTimeout(() => matchedRow.classList.remove('highlight'), 3000);
+                } else {
+                    showMessage('❌ Student not found in the list', 'error');
+                }
+            }
+        });
+
+        // Real-time search filtering
+        searchBox.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if(query.length < 2) {
+                rows.forEach(row => row.style.display = '');
+                return;
+            }
+
+            rows.forEach(row => {
+                const name = row.querySelector('.student-name').textContent.toLowerCase();
+                const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                if(name.includes(query) || regNumber.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Marks input validation and auto-calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            marksInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    let value = parseInt(this.value);
+                    
+                    // Validate marks range (0-25 for each component)
+                    if(value < 0) this.value = 0;
+                    if(value > 25) this.value = 25;
+                    
+                    // Calculate total for this row
+                    updateRowTotal(this.closest('tr'));
+                    
+                    // Color code based on component marks
+                    if(this.value) {
+                        value = parseInt(this.value);
+                        if(value >= 23) {
+                            this.style.color = '#2e7d32'; // Green for excellent
+                            this.style.fontWeight = 'bold';
+                        } else if(value >= 18) {
+                            this.style.color = '#1976d2'; // Blue for good
+                            this.style.fontWeight = '600';
+                        } else if(value >= 13) {
+                            this.style.color = '#f57c00'; // Orange for average
+                            this.style.fontWeight = '500';
+                        } else {
+                            this.style.color = '#d32f2f'; // Red for below average
+                            this.style.fontWeight = 'bold';
+                        }
+                    } else {
+                        this.style.color = '';
+                        this.style.fontWeight = '';
+                    }
+                });
+            });
+        });
+
+        function updateRowTotal(row) {
+            const writeupInput = row.querySelector('.writeup-input');
+            const executionInput = row.querySelector('.execution-input');
+            const vivaInput = row.querySelector('.viva-input');
+            const totalCell = row.querySelector('.total-cell');
+            
+            const writeup = parseInt(writeupInput.value) || 0;
+            const execution = parseInt(executionInput.value) || 0;
+            const viva = parseInt(vivaInput.value) || 0;
+            
+            const total = writeup + execution + viva;
+            totalCell.textContent = total;
+            
+            // Color code total
+            if(total >= 70) {
+                totalCell.style.color = '#2e7d32';
+                totalCell.style.fontWeight = 'bold';
+            } else if(total >= 55) {
+                totalCell.style.color = '#1976d2';
+                totalCell.style.fontWeight = '600';
+            } else if(total >= 40) {
+                totalCell.style.color = '#f57c00';
+                totalCell.style.fontWeight = '500';
+            } else if(total > 0) {
+                totalCell.style.color = '#d32f2f';
+                totalCell.style.fontWeight = 'bold';
+            } else {
+                totalCell.style.color = '';
+                totalCell.style.fontWeight = '';
+            }
+        }
+
+        // Updated saveAllMarks function for new structure
+        async function saveAllMarks() {
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const subjectCode = document.querySelector('input[name="subjectCode"]:checked').value;
+            const examTypeName = examType === 'mid' ? 'Mid Semester' : 'End Semester';
+            
+            console.log('📝 Starting save process for:', examTypeName, 'Subject:', subjectCode);
+            
+            const marksData = [];
+            
+            rows.forEach(row => {
+                const studentName = row.querySelector('.student-name').textContent.trim();
+                const registerNumber = row.querySelector('.register-number').textContent.trim();
+                const writeupValue = row.querySelector('.writeup-input').value.trim();
+                const executionValue = row.querySelector('.execution-input').value.trim();
+                const vivaValue = row.querySelector('.viva-input').value.trim();
+                
+                // Only include rows with at least one mark entered
+                if (writeupValue !== '' || executionValue !== '' || vivaValue !== '') {
+                    const writeup = parseInt(writeupValue) || 0;
+                    const execution = parseInt(executionValue) || 0;
+                    const viva = parseInt(vivaValue) || 0;
+                    
+                    if (writeup >= 0 && writeup <= 25 && execution >= 0 && execution <= 25 && viva >= 0 && viva <= 25) {
+                        marksData.push({
+                            registerNumber: registerNumber,
+                            studentName: studentName,
+                            writeup: writeup,
+                            execution: execution,
+                            viva: viva
+                        });
+                        console.log(`✅ Added to save queue: ${studentName} (${registerNumber}) - W:${writeup}, E:${execution}, V:${viva}`);
+                    }
+                }
+            });
+
+            if(marksData.length === 0) {
+                showMessage('⚠️ No valid marks entered to save. Please enter marks (0-25) for at least one component.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const saveButton = document.querySelector('.save-marks-btn');
+            const originalHTML = saveButton.innerHTML;
+            saveButton.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 16px; height: 16px; border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Saving ${marksData.length} students...
+                </div>
+            `;
+            saveButton.disabled = true;
+
+            try {
+                console.log('🚀 Sending marks data to server:', { examType, subjectCode, marksData });
+                
+                const response = await fetch('/api/save-marks', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        examType: examType,
+                        subjectCode: subjectCode,
+                        marksData: marksData
+                    })
+                });
+
+                console.log('📡 Response status:', response.status);
+                
+                let result;
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    throw new Error('Server returned invalid response format');
+                }
+                
+                console.log('📋 Server response:', result);
+
+                if (response.ok && result.success) {
+                    showMessage(`✅ ${result.message}`, 'success');
+                    
+                    // Highlight successfully saved students
+                    if (result.results && result.results.length > 0) {
+                        result.results.forEach(savedResult => {
+                            const row = rows.find(row => 
+                                row.querySelector('.register-number').textContent.trim() === savedResult.registerNumber
+                            );
+                            if (row) {
+                                const inputs = row.querySelectorAll('.marks-input');
+                                inputs.forEach(input => {
+                                    input.style.backgroundColor = '#d4edda';
+                                    input.style.borderColor = '#c3e6cb';
+                                });
+                                setTimeout(() => {
+                                    inputs.forEach(input => {
+                                        input.style.backgroundColor = '';
+                                        input.style.borderColor = '';
+                                    });
+                                }, 3000);
+                            }
+                        });
+                    }
+                } else {
+                    let errorMessage = result.message || 'Failed to save marks';
+                    
+                    if (result.errors && result.errors.length > 0) {
+                        errorMessage += '\n\nDetails:\n' + result.errors.map(err => 
+                            `• ${err.studentName || err.registerNumber}: ${err.error || err}`
+                        ).join('\n');
+                    }
+                    
+                    showMessage(`❌ ${errorMessage}`, 'error');
+                    console.error('❌ Save marks error:', result);
+                }
+
+            } catch (error) {
+                console.error('💥 Network/Server error:', error);
+                showMessage(`❌ Network error: ${error.message}. Please check if the server is running and try again.`, 'error');
+            } finally {
+                saveButton.innerHTML = originalHTML;
+                saveButton.disabled = false;
+            }
+        }
+
+        function clearAllMarks() {
+            if(confirm('Are you sure you want to clear all entered marks?')) {
+                const marksInputs = document.querySelectorAll('.marks-input');
+                marksInputs.forEach(input => {
+                    input.value = '';
+                    input.style.color = '';
+                    input.style.fontWeight = '';
+                    input.style.backgroundColor = '';
+                    input.style.borderColor = '';
+                });
+                
+                // Clear totals
+                document.querySelectorAll('.total-cell').forEach(cell => {
+                    cell.textContent = '0';
+                    cell.style.color = '';
+                    cell.style.fontWeight = '';
+                });
+                
+                showMessage('🔄 All marks cleared', 'success');
+            }
+        }
+
+        function showMessage(text, type) {
+            searchMessage.innerHTML = text.replace(/\n/g, '<br>');
+            searchMessage.className = `search-message ${type}`;
+            searchMessage.style.display = 'block';
+            
+            const hideTime = type === 'error' ? 8000 : 5000;
+            setTimeout(() => {
+                searchMessage.style.display = 'none';
+            }, hideTime);
+        }
+
+        // Add CSS for loading spinner and subject selection
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            .subject-selection-container {
+                background: var(--card-bg);
+                border: 1px solid var(--card-border);
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: var(--shadow-sm);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                text-align: center;
+            }
+            
+            .subject-selection-title {
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--text);
+            }
+            
+            .subject-selection-options {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 16px;
+                justify-items: center;
+            }
+            
+            .subject-option {
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                padding: 12px 20px;
+                border-radius: 12px;
+                border: 2px solid var(--card-border);
+                background: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                color: var(--text);
+                min-width: 200px;
+                justify-content: center;
+            }
+            
+            .subject-option:hover {
+                border-color: var(--accent);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(58, 118, 196, 0.2);
+            }
+            
+            .subject-option input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+            
+            .subject-option:has(input[type="radio"]:checked) {
+                background: linear-gradient(135deg, var(--accent), #6aa3e6);
+                border-color: var(--accent);
+                color: white;
+            }
+            
+            .subject-text {
+                font-weight: 600;
+                font-size: 0.95rem;
+                transition: color 0.3s ease;
+                text-align: center;
+            }
+            
+            .total-cell {
+                font-weight: 600;
+                text-align: center;
+                font-size: 1.1rem;
+                padding: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 6px;
+            }
+            
+            .search-message.error {
+                white-space: pre-line;
+                max-width: 450px;
+                line-height: 1.4;
+            }
+            
+            @media (max-width: 600px) {
+                .subject-selection-options {
+                    grid-template-columns: 1fr;
+                }
+                
+                .student-table {
+                    min-width: 650px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Lab Marks - Lab Exam Portal</title>
+    <link rel="stylesheet" href="../css/student-data.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Background animation -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="../images/christlogo.png" alt="Christ University logo" class="logo" />
+            <div class="brand">
+                <span class="dept">Department of AIML and Data Science</span>
+            </div>
+            <div class="user-actions">
+                <a href="../html/teacher-dashboard.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Message Notification -->
+    <div id="searchMessage" class="search-message" style="display: none;"></div>
+
+    <main class="student-data-wrapper">
+        <section class="student-data-hero">
+            <h1 class="title gradient-text">Student Lab Marks</h1>
+            <p class="subtitle">Enter marks for writeup, execution, and viva components</p>
+        </section>
+
+        <section class="exam-type-container">
+            <h2 class="exam-type-title">Select Exam Type</h2>
+            <div class="exam-type-options">
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="mid" checked />
+                    <span class="option-text">Mid Semester</span>
+                </label>
+                <label class="exam-type-option">
+                    <input type="radio" name="examType" value="end" />
+                    <span class="option-text">End Semester</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Teacher Subject Display Section -->
+        <section class="teacher-subject-container">
+            <h2 class="teacher-subject-title">Subject</h2>
+            <div class="teacher-subject-display">
+                <span id="teacherSubject" class="subject-name">Loading subject...</span>
+            </div>
+            <div class="teacher-info">
+                <p class="teacher-name">Teacher: <span id="teacherName">Loading...</span></p>
+            </div>
+        </section>
+
+        <section class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Search by name or register number..." />
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Register Number</th>
+                        <th>Writeup (0-25)</th>
+                        <th>Execution (0-25)</th>
+                        <th>Viva (0-25)</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="student-name">Abhishek Anil George</td><td class="register-number">2362005</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adiel A Daniel</td><td class="register-number">2362007</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adin Sam</td><td class="register-number">2362008</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adithya P</td><td class="register-number">2362010</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adithya Agrawal</td><td class="register-number">2362012</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adorn Jim Mathew</td><td class="register-number">2362013</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Adriel Clinton</td><td class="register-number">2362019</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Airene V John</td><td class="register-number">2362020</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Akash Dileep</td><td class="register-number">2362022</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Akhil Alex</td><td class="register-number">2362023</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Anantha Narayan</td><td class="register-number">2362030</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Andrea Mary P T</td><td class="register-number">2362038</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ashik Tomy</td><td class="register-number">2362040</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ashutosh Das</td><td class="register-number">2362044</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Asin Tressa</td><td class="register-number">2362045</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Avadhanam Hasini</td><td class="register-number">2362047</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Davis K Sony</td><td class="register-number">2362049</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Delna Liz Denny</td><td class="register-number">2362050</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Felix Francis</td><td class="register-number">2362069</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Giftson Samuel Raj I</td><td class="register-number">2362072</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Gladwin B Pullan</td><td class="register-number">2362080</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Ishika Gupta</td><td class="register-number">2362085</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Abhishek Rufus</td><td class="register-number">2362087</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Vyashnavi</td><td class="register-number">2362092</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Jewel Titus</td><td class="register-number">2362095</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Jio Shiju</td><td class="register-number">2362100</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Bhavyashree</td><td class="register-number">2362102</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Kavin Srini</td><td class="register-number">2362103</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Lemuel Fernandez</td><td class="register-number">2362105</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">M Haripriya</td><td class="register-number">2362108</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Mayanak Sharma</td><td class="register-number">2362110</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Melwin K</td><td class="register-number">2362112</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Melwin Robinson</td><td class="register-number">2362115</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Muthu Anurag</td><td class="register-number">2362120</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Nandana</td><td class="register-number">2362121</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                    <tr><td class="student-name">Nandini</td><td class="register-number">2362123</td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input writeup-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input execution-input" /></td><td class="marks-cell"><input type="number" min="0" max="25" class="marks-input viva-input" /></td><td class="total-cell">0</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="action-buttons">
+            <button class="save-marks-btn" onclick="saveAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                </svg>
+                Save Marks
+            </button>
+            <button class="clear-marks-btn" onclick="clearAllMarks()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+                Clear All
+            </button>
+        </div>
+    </main>
+
+    <script>
+        // Global variables
+        let teacherData = null;
+        const searchBox = document.getElementById('searchBox');
+        const rows = Array.from(document.querySelectorAll('.student-table tbody tr'));
+        const searchMessage = document.getElementById('searchMessage');
+
+        // Load teacher data from localStorage when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Page loaded, checking for teacher data...');
+            
+            // Get teacher data from localStorage
+            const teacherDataString = localStorage.getItem('teacherData');
+            const userType = localStorage.getItem('userType');
+            
+            console.log('📋 LocalStorage contents:', {
+                teacherData: teacherDataString,
+                userType: userType
+            });
+            
+            if (!teacherDataString) {
+                showMessage('❌ No teacher data found in localStorage. Redirecting to login...', 'error');
+                setTimeout(() => {
+                    window.location.href = '../html/teacher-login.html';
+                }, 3000);
+                return;
+            }
+            
+            try {
+                teacherData = JSON.parse(teacherDataString);
+                console.log('✅ Parsed teacher data:', teacherData);
+                
+                if (!teacherData || !teacherData.subject) {
+                    throw new Error('Teacher subject not found in data');
+                }
+                
+                // Display teacher's subject and name
+                document.getElementById('teacherSubject').textContent = teacherData.subject;
+                document.getElementById('teacherName').textContent = teacherData.name || 'Unknown';
+                
+                console.log('✅ Successfully loaded teacher:', teacherData.name, 'Subject:', teacherData.subject);
+                
+            } catch (error) {
+                console.error('❌ Error parsing teacher data:', error);
+                showMessage('❌ Invalid teacher data. Please log in again.', 'error');
+                setTimeout(() => {
+                    window.location.href = 'teacher-login.html';
+                }, 3000);
+                return;
+            }
+
+            // Initialize marks input event listeners
+            initializeMarksInputs();
+        });
+
+        // Initialize marks input event listeners
+        function initializeMarksInputs() {
+            const marksInputs = document.querySelectorAll('.marks-input');
+            
+            marksInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    let value = parseInt(this.value);
+                    
+                    // Validate marks range (0-25 for each component)
+                    if (value < 0) this.value = 0;
+                    if (value > 25) this.value = 25;
+                    
+                    // Calculate total for this row
+                    updateRowTotal(this.closest('tr'));
+                    
+                    // Color code based on component marks
+                    if (this.value) {
+                        value = parseInt(this.value);
+                        if (value >= 23) {
+                            this.style.color = '#2e7d32'; // Green for excellent
+                            this.style.fontWeight = 'bold';
+                        } else if (value >= 18) {
+                            this.style.color = '#1976d2'; // Blue for good
+                            this.style.fontWeight = '600';
+                        } else if (value >= 13) {
+                            this.style.color = '#f57c00'; // Orange for average
+                            this.style.fontWeight = '500';
+                        } else {
+                            this.style.color = '#d32f2f'; // Red for below average
+                            this.style.fontWeight = 'bold';
+                        }
+                    } else {
+                        this.style.color = '';
+                        this.style.fontWeight = '';
+                    }
+                });
+            });
+        }
+
+        // Search functionality
+        searchBox.addEventListener('keydown', function(event) {
+            if(event.key === 'Enter') {
+                event.preventDefault();
+                const query = this.value.trim().toLowerCase();
+                if(!query) return;
+
+                rows.forEach(row => row.classList.remove('highlight'));
+
+                let matchedRow = rows.find(row => {
+                    const name = row.querySelector('.student-name').textContent.toLowerCase();
+                    const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                    return name.includes(query) || regNumber.includes(query);
+                });
+
+                if(matchedRow) {
+                    matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    matchedRow.classList.add('highlight');
+                    
+                    const firstInput = matchedRow.querySelector('.writeup-input');
+                    setTimeout(() => firstInput.focus(), 500);
+                    
+                    const studentName = matchedRow.querySelector('.student-name').textContent;
+                    showMessage(`✅ Found: ${studentName}`, 'success');
+                    
+                    setTimeout(() => matchedRow.classList.remove('highlight'), 3000);
+                } else {
+                    showMessage('❌ Student not found in the list', 'error');
+                }
+            }
+        });
+
+        // Real-time search filtering
+        searchBox.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if(query.length < 2) {
+                rows.forEach(row => row.style.display = '');
+                return;
+            }
+
+            rows.forEach(row => {
+                const name = row.querySelector('.student-name').textContent.toLowerCase();
+                const regNumber = row.querySelector('.register-number').textContent.toLowerCase();
+                if(name.includes(query) || regNumber.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        function updateRowTotal(row) {
+            const writeupInput = row.querySelector('.writeup-input');
+            const executionInput = row.querySelector('.execution-input');
+            const vivaInput = row.querySelector('.viva-input');
+            const totalCell = row.querySelector('.total-cell');
+            
+            const writeup = parseInt(writeupInput.value) || 0;
+            const execution = parseInt(executionInput.value) || 0;
+            const viva = parseInt(vivaInput.value) || 0;
+            
+            const total = writeup + execution + viva;
+            totalCell.textContent = total;
+            
+            // Color code total
+            if(total >= 70) {
+                totalCell.style.color = '#2e7d32';
+                totalCell.style.fontWeight = 'bold';
+            } else if(total >= 55) {
+                totalCell.style.color = '#1976d2';
+                totalCell.style.fontWeight = '600';
+            } else if(total >= 40) {
+                totalCell.style.color = '#f57c00';
+                totalCell.style.fontWeight = '500';
+            } else if(total > 0) {
+                totalCell.style.color = '#d32f2f';
+                totalCell.style.fontWeight = 'bold';
+            } else {
+                totalCell.style.color = '';
+                totalCell.style.fontWeight = '';
+            }
+        }
+
+        // Updated saveAllMarks function
+        async function saveAllMarks() {
+            if (!teacherData || !teacherData.subject) {
+                showMessage('❌ Teacher subject not available. Please refresh the page and try again.', 'error');
+                return;
+            }
+
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const examTypeName = examType === 'mid' ? 'Mid Semester' : 'End Semester';
+            
+            console.log('📝 Starting save process for:', examTypeName, 'Subject:', teacherData.subject);
+            
+            const marksData = [];
+            
+            rows.forEach(row => {
+                const studentName = row.querySelector('.student-name').textContent.trim();
+                const registerNumber = row.querySelector('.register-number').textContent.trim();
+                const writeupValue = row.querySelector('.writeup-input').value.trim();
+                const executionValue = row.querySelector('.execution-input').value.trim();
+                const vivaValue = row.querySelector('.viva-input').value.trim();
+                
+                // Only include rows with at least one mark entered
+                if (writeupValue !== '' || executionValue !== '' || vivaValue !== '') {
+                    const writeup = parseInt(writeupValue) || 0;
+                    const execution = parseInt(executionValue) || 0;
+                    const viva = parseInt(vivaValue) || 0;
+                    
+                    if (writeup >= 0 && writeup <= 25 && execution >= 0 && execution <= 25 && viva >= 0 && viva <= 25) {
+                        marksData.push({
+                            registerNumber: registerNumber,
+                            studentName: studentName,
+                            writeup: writeup,
+                            execution: execution,
+                            viva: viva
+                        });
+                        console.log(`✅ Added to save queue: ${studentName} (${registerNumber}) - W:${writeup}, E:${execution}, V:${viva}`);
+                    }
+                }
+            });
+
+            if(marksData.length === 0) {
+                showMessage('⚠️ No valid marks entered to save. Please enter marks (0-25) for at least one component.', 'error');
+                return;
+            }
+
+            // Show loading state
+            const saveButton = document.querySelector('.save-marks-btn');
+            const originalHTML = saveButton.innerHTML;
+            saveButton.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 16px; height: 16px; border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Saving ${marksData.length} students...
+                </div>
+            `;
+            saveButton.disabled = true;
+
+            try {
+                console.log('🚀 Sending marks data to server:', { 
+                    examType, 
+                    teacherSubject: teacherData.subject, 
+                    marksDataCount: marksData.length 
+                });
+                
+                const response = await fetch('/api/save-marks', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        examType: examType,
+                        teacherSubject: teacherData.subject,
+                        marksData: marksData
+                    })
+                });
+
+                console.log('📡 Response status:', response.status);
+                
+                let result;
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    throw new Error('Server returned invalid response format');
+                }
+                
+                console.log('📋 Server response:', result);
+
+                if (response.ok && result.success) {
+                    showMessage(`✅ ${result.message}`, 'success');
+                    
+                    // Highlight successfully saved students
+                    if (result.results && result.results.length > 0) {
+                        result.results.forEach(savedResult => {
+                            const row = rows.find(row => 
+                                row.querySelector('.register-number').textContent.trim() === savedResult.registerNumber
+                            );
+                            if (row) {
+                                const inputs = row.querySelectorAll('.marks-input');
+                                inputs.forEach(input => {
+                                    input.style.backgroundColor = '#d4edda';
+                                    input.style.borderColor = '#c3e6cb';
+                                });
+                                setTimeout(() => {
+                                    inputs.forEach(input => {
+                                        input.style.backgroundColor = '';
+                                        input.style.borderColor = '';
+                                    });
+                                }, 3000);
+                            }
+                        });
+                    }
+                } else {
+                    let errorMessage = result.message || 'Failed to save marks';
+                    
+                    if (result.errors && result.errors.length > 0) {
+                        errorMessage += '\n\nDetails:\n' + result.errors.map(err => 
+                            `• ${err.studentName || err.registerNumber}: ${err.error || err}`
+                        ).join('\n');
+                    }
+                    
+                    showMessage(`❌ ${errorMessage}`, 'error');
+                    console.error('❌ Save marks error:', result);
+                }
+
+            } catch (error) {
+                console.error('💥 Network/Server error:', error);
+                showMessage(`❌ Network error: ${error.message}. Please check if the server is running and try again.`, 'error');
+            } finally {
+                saveButton.innerHTML = originalHTML;
+                saveButton.disabled = false;
+            }
+        }
+
+        function clearAllMarks() {
+            if(confirm('Are you sure you want to clear all entered marks?')) {
+                const marksInputs = document.querySelectorAll('.marks-input');
+                marksInputs.forEach(input => {
+                    input.value = '';
+                    input.style.color = '';
+                    input.style.fontWeight = '';
+                    input.style.backgroundColor = '';
+                    input.style.borderColor = '';
+                });
+                
+                // Clear totals
+                document.querySelectorAll('.total-cell').forEach(cell => {
+                    cell.textContent = '0';
+                    cell.style.color = '';
+                    cell.style.fontWeight = '';
+                });
+                
+                showMessage('🔄 All marks cleared', 'success');
+            }
+        }
+
+        function showMessage(text, type) {
+            searchMessage.innerHTML = text.replace(/\n/g, '<br>');
+            searchMessage.className = `search-message ${type}`;
+            searchMessage.style.display = 'block';
+            
+            const hideTime = type === 'error' ? 10000 : 5000;
+            setTimeout(() => {
+                searchMessage.style.display = 'none';
+            }, hideTime);
+        }
+
+        // Add CSS for loading spinner and teacher info
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            .teacher-subject-container {
+                background: var(--card-bg);
+                border: 1px solid var(--card-border);
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: var(--shadow-sm);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                text-align: center;
+            }
+            
+            .teacher-subject-title {
+                margin-bottom: 16px;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--text);
+            }
+            
+            .teacher-subject-display {
+                background: linear-gradient(135deg, var(--accent), #6aa3e6);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 12px;
+                display: inline-block;
+                min-width: 250px;
+                margin-bottom: 12px;
+            }
+            
+            .subject-name {
+                font-weight: 700;
+                font-size: 1.1rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .teacher-info {
+                margin-top: 12px;
+            }
+            
+            .teacher-name {
+                font-size: 1rem;
+                color: var(--text-light);
+                margin: 0;
+            }
+            
+            .teacher-name span {
+                font-weight: 600;
+                color: var(--accent);
+            }
+            
+            .search-message.error {
+                white-space: pre-line;
+                max-width: 450px;
+                line-height: 1.4;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
